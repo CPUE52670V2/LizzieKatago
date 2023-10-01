@@ -1,0 +1,7 @@
+(;DT[2022-02-23]KM[7.5]PB[]RE[]DZ[G]PW[]SZ[19]CA[UTF-8]AP[Lizzie: yzy2.4.7]C[引擎规则: 中国规则
+
+黑棋 胜率: 39.3% 
+领先: 0.9  不确定度: 16.7
+(新引擎 / 354 计算量)
+贴目: 7.5]LZOP[新引擎 60.7 354 -0.9 16.7
+move Q16 visits 197 winrate 3927 prior 580 scoreMean -0.86 pv Q16 D4 D16 Q4 C6 R17 R16 Q17 P16 O18 F3 D6 info move Q4 visits 197 winrate 3927 prior 580 scoreMean -0.86 pv Q4 D16 D4 Q16 C14 R3 R4 Q3 P4 O2 F17 D14 info move D16 visits 197 winrate 3927 prior 580 scoreMean -0.86 pv D16 Q4 Q16 D4 R6 C17 C16 D17 E16 F18 O3 Q6];B[pd])

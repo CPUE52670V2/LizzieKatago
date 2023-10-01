@@ -1,0 +1,10 @@
+(;DT[2023-09-30]KM[7.5]PB[我]RE[]DZ[G]PW[Katago]SZ[19]HA[9]CA[UTF-8]AP[Lizzie: yzy2.4.7]AB[dd][dj][dp][jd][jj][jp][pd][pj][pp]C[引擎规则: 中国规则
+
+白棋 胜率: 0.0% 
+盘面: -98.5  不确定度: 20.0
+(Katago / 254 计算量)
+贴目: 7.5 激进度: 2.75]LZOP[Katago 100.0 260 -91.0 20.0 2.75
+move C6 visits 140 winrate 0 prior 416 scoreMean -91.00 pv C6 C5 D6 F4 G6 D8 G9 info move C14 visits 140 winrate 0 prior 416 scoreMean -91.00 pv C14 C15 D14 F16 G14 D12 G11 info move R6 visits 140 winrate 0 prior 416 scoreMean -91.00 pv R6 R5 Q6 O4 N6 Q8 N9 info move R14 visits 140 winrate 0 prior 416 scoreMean -91.00 pv R14 R15 Q14 O16 N14 Q12 N11 info move O17 visits 140 winrate 0 prior 416 scoreMean -91.00 pv O17 P17 O16 Q14 O13 M16 L13];W[cn]C[白棋 胜率: 0.0% 
+盘面: -98.5  不确定度: 20.0
+(Katago / 260 计算量)
+贴目: 7.5 激进度: 2.75])

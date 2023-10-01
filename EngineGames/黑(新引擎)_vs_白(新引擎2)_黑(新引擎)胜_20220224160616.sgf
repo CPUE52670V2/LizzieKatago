@@ -1,0 +1,149 @@
+(;DT[2022-02-24]KM[7.5]PB[新引擎]RE[B+R]DZ[KW]PW[新引擎2]SZ[19]CA[UTF-8]AP[Lizzie: yzy2.4.7]C[黑棋整局用时:47.763秒
+总计算量:47
+白棋整局用时:37.015秒
+总计算量:35
+黑引擎规则: 中国规则
+白引擎规则: 中国规则]LZOP[新引擎 61.1 6 -1.0 17.4
+move R16 visits 1 winrate 3885 prior 664 scoreMean -0.97 pv R16 info move R4 visits 1 winrate 3885 prior 664 scoreMean -0.97 pv R4 info move C16 visits 1 winrate 3885 prior 664 scoreMean -0.97 pv C16];B[qd]C[黑棋 胜率: 38.9% 
+领先: -1.0  不确定度: 17.4
+(新引擎 / 6 计算量)
+贴目: 7.5]LZ[新引擎2 38.5 3 0.9 17.3
+move D17 visits 1 winrate 6145 prior 381 scoreMean 0.89 pv D17 info move D3 visits 1 winrate 6064 prior 294 scoreMean 0.85 pv D3 info move D4 visits 1 winrate 6192 prior 1360 scoreMean 0.87 pv D4];W[dc]C[白棋 胜率: 61.5% 
+领先: 0.9  不确定度: 17.3
+(新引擎2 / 3 计算量)
+贴目: 7.5]LZ[新引擎 60.9 6 -0.9 17.9
+move Q4 visits 1 winrate 3906 prior 1925 scoreMean -0.93 pv Q4 info move C15 visits 1 winrate 3931 prior 1223 scoreMean -1.00 pv C15 info move Q3 visits 1 winrate 3966 prior 594 scoreMean -0.89 pv Q3];B[pp]C[黑棋 胜率: 39.1% (+0.2%)
+领先: -0.9 (+0.0) 不确定度: 17.9
+(新引擎 / 6 计算量)
+贴目: 7.5]LZ[新引擎2 39.5 1 0.8 16.7
+move D4 visits 1 winrate 6053 prior 6980 scoreMean 0.75 pv D4 info move D3 visits 0 winrate 5622 prior 1677 scoreMean 0.88 pv D3 info move C4 visits 0 winrate 5622 prior 792 scoreMean 0.88 pv C4];W[dp]C[白棋 胜率: 60.5% (-0.9%)
+领先: 0.8 (-0.1) 不确定度: 16.7
+(新引擎2 / 1 计算量)
+贴目: 7.5
+此手用时: 2.578秒]LZ[新引擎 60.8 3 -0.8 16.9
+move C15 visits 1 winrate 3919 prior 3170 scoreMean -0.80 pv C15 info move C3 visits 1 winrate 3807 prior 2108 scoreMean -0.88 pv C3 info move P16 visits 1 winrate 4098 prior 1603 scoreMean -0.71 pv P16];B[ce]C[黑棋 胜率: 39.2% (+0.1%)
+领先: -0.8 (+0.1) 不确定度: 16.9
+(新引擎 / 3 计算量)
+贴目: 7.5
+此手用时: 5.603秒]LZ[新引擎2 39.8 2 0.8 16.9
+move C16 visits 1 winrate 6023 prior 1686 scoreMean 0.82 pv C16 info move P17 visits 1 winrate 6119 prior 1843 scoreMean 0.86 pv P17 info move E16 visits 0 winrate 5617 prior 3470 scoreMean 0.83 pv E16];W[cd]C[白棋 胜率: 60.2% (-0.3%)
+领先: 0.8 (+0.1) 不确定度: 16.9
+(新引擎2 / 2 计算量)
+贴目: 7.5
+此手用时: 2.731秒]LZ[新引擎 61.5 6 -0.9 16.7
+move D15 visits 1 winrate 3854 prior 9243 scoreMean -0.92 pv D15 info move E16 visits 1 winrate 3844 prior 218 scoreMean -1.01 pv E16 info move B16 visits 1 winrate 3626 prior 87 scoreMean -1.16 pv B16];B[de]C[黑棋 胜率: 38.5% (-0.7%)
+领先: -0.9 (-0.1) 不确定度: 16.7
+(新引擎 / 6 计算量)
+贴目: 7.5
+此手用时: 2.164秒]LZ[新引擎2 40.9 3 0.6 17.0
+move G17 visits 1 winrate 5909 prior 45 scoreMean 0.64 pv G17 info move Q16 visits 1 winrate 5286 prior 33 scoreMean -0.04 pv Q16 info move E16 visits 1 winrate 5956 prior 37 scoreMean 0.72 pv E16 info move F17 visits 0 winrate 5332 prior 8635 scoreMean 0.57 pv F17];W[gc]C[白棋 胜率: 59.1% (-1.1%)
+领先: 0.6 (-0.2) 不确定度: 17.0
+(新引擎2 / 3 计算量)
+贴目: 7.5
+此手用时: 3.172秒]LZ[新引擎 59.3 1 -0.7 16.7
+move C3 visits 1 winrate 4071 prior 583 scoreMean -0.71 pv C3 info move C6 visits 0 winrate 3704 prior 2682 scoreMean -0.59 pv C6 info move F3 visits 0 winrate 3704 prior 2096 scoreMean -0.59 pv F3];B[cq]C[黑棋 胜率: 40.7% (+2.2%)
+领先: -0.7 (+0.2) 不确定度: 16.7
+(新引擎 / 1 计算量)
+贴目: 7.5
+此手用时: 2.064秒]LZ[新引擎2 41.2 2 0.5 16.9
+move C4 visits 1 winrate 5880 prior 8892 scoreMean 0.51 pv C4 info move Q17 visits 1 winrate 5239 prior 12 scoreMean -0.19 pv Q17 info move D3 visits 0 winrate 5309 prior 788 scoreMean 0.52 pv D3];W[cp]C[白棋 胜率: 58.8% (-0.3%)
+领先: 0.5 (-0.1) 不确定度: 16.9
+(新引擎2 / 2 计算量)
+贴目: 7.5
+此手用时: 2.116秒]LZ[新引擎 64.7 4 -1.3 16.6
+move D16 visits 2 winrate 3531 prior 42 scoreMean -1.26 pv D16 C17 info move G16 visits 2 winrate 3825 prior 29 scoreMean -0.89 pv G16 F16 info move D3 visits 0 winrate 3282 prior 8849 scoreMean -0.95 pv D3];B[dd]C[黑棋 胜率: 35.3% (-5.4%)
+领先: -1.3 (-0.6) 不确定度: 16.6
+(新引擎 / 4 计算量)
+贴目: 7.5
+此手用时: 2.698秒]LZ[新引擎2 35.6 4 1.2 16.9
+move C17 visits 1 winrate 6437 prior 9867 scoreMean 1.21 pv C17 info move E17 visits 1 winrate 5173 prior 21 scoreMean -0.13 pv E17 info move B17 visits 1 winrate 2569 prior 18 scoreMean -4.37 pv B17];W[cc]C[白棋 胜率: 64.4% (+5.6%)
+领先: 1.2 (+0.7) 不确定度: 16.9
+(新引擎2 / 4 计算量)
+贴目: 7.5
+此手用时: 2.205秒]LZ[新引擎 67.2 1 -1.6 16.8
+move D3 visits 1 winrate 3283 prior 8379 scoreMean -1.57 pv D3 info move F17 visits 0 winrate 2888 prior 1425 scoreMean -1.41 pv F17 info move F16 visits 0 winrate 2888 prior 66 scoreMean -1.41 pv F16];B[dq]C[黑棋 胜率: 32.8% (-2.5%)
+领先: -1.6 (-0.3) 不确定度: 16.8
+(新引擎 / 1 计算量)
+贴目: 7.5
+此手用时: 2.127秒]LZ[新引擎2 47.9 1 -0.2 16.9
+move Q16 visits 1 winrate 5205 prior 7 scoreMean -0.22 pv Q16 info move E4 visits 0 winrate 5471 prior 8378 scoreMean 0.69 pv E4 info move F3 visits 0 winrate 5471 prior 1414 scoreMean 0.69 pv F3];W[pd]C[白棋 胜率: 52.1% (-12.3%)
+领先: -0.2 (-1.4) 不确定度: 16.9
+(新引擎2 / 1 计算量)
+贴目: 7.5
+此手用时: 2.014秒]LZ[新引擎 66.1 3 -1.4 16.9
+move R17 visits 1 winrate 3385 prior 82 scoreMean -1.42 pv R17 info move F16 visits 1 winrate 3838 prior 59 scoreMean -1.13 pv F16 info move Q15 visits 1 winrate 3144 prior 24 scoreMean -1.76 pv Q15];B[qc]C[黑棋 胜率: 33.9% (+1.0%)
+领先: -1.4 (+0.1) 不确定度: 16.9
+(新引擎 / 3 计算量)
+贴目: 7.5
+此手用时: 2.523秒]LZ[新引擎2 36.5 4 1.1 16.7
+move E4 visits 1 winrate 6346 prior 7843 scoreMean 1.07 pv E4 info move F3 visits 1 winrate 6248 prior 1965 scoreMean 1.02 pv F3 info move F4 visits 1 winrate 5083 prior 11 scoreMean -0.27 pv F4];W[ep]C[白棋 胜率: 63.5% (+11.4%)
+领先: 1.1 (+1.3) 不确定度: 16.7
+(新引擎2 / 4 计算量)
+贴目: 7.5
+此手用时: 3.121秒]LZ[新引擎 67.9 3 -1.6 16.8
+move F2 visits 1 winrate 3213 prior 2826 scoreMean -1.64 pv F2 info move F16 visits 1 winrate 3569 prior 116 scoreMean -1.39 pv F16 info move F3 visits 1 winrate 3282 prior 1040 scoreMean -1.50 pv F3];B[fr]C[黑棋 胜率: 32.1% (-1.7%)
+领先: -1.6 (-0.2) 不确定度: 16.8
+(新引擎 / 3 计算量)
+贴目: 7.5
+此手用时: 2.164秒]LZ[新引擎2 36.8 3 1.1 16.5
+move D11 visits 1 winrate 6316 prior 110 scoreMean 1.06 pv D11 info move F3 visits 1 winrate 6175 prior 152 scoreMean 0.98 pv F3 info move C11 visits 1 winrate 6396 prior 3066 scoreMean 1.16 pv C11];W[di]C[白棋 胜率: 63.2% (-0.3%)
+领先: 1.1 (-0.0) 不确定度: 16.5
+(新引擎2 / 3 计算量)
+贴目: 7.5
+此手用时: 2.722秒]LZ[新引擎 62.9 4 -1.1 16.6
+move F17 visits 1 winrate 3711 prior 4192 scoreMean -1.07 pv F17 info move Q15 visits 1 winrate 3502 prior 2369 scoreMean -1.27 pv Q15 info move G16 visits 1 winrate 2979 prior 247 scoreMean -1.79 pv G16 info move C9 visits 1 winrate 3049 prior 356 scoreMean -1.90 pv C9];B[fc]C[黑棋 胜率: 37.1% (+5.0%)
+领先: -1.1 (+0.6) 不确定度: 16.6
+(新引擎 / 4 计算量)
+贴目: 7.5
+此手用时: 2.056秒]LZ[新引擎2 46.4 1 0.1 16.5
+move E16 visits 1 winrate 5358 prior 96 scoreMean 0.09 pv E16 info move F16 visits 0 winrate 5327 prior 5208 scoreMean 0.65 pv F16 info move F18 visits 0 winrate 5327 prior 2981 scoreMean 0.65 pv F18];W[ed]C[白棋 胜率: 53.6% (-9.6%)
+领先: 0.1 (-1.0) 不确定度: 16.5
+(新引擎2 / 1 计算量)
+贴目: 7.5
+此手用时: 2.8秒]LZ[新引擎 64.3 1 -1.3 16.3
+move D12 visits 1 winrate 3571 prior 15 scoreMean -1.32 pv D12 info move E17 visits 0 winrate 3630 prior 5456 scoreMean -0.69 pv E17 info move F16 visits 0 winrate 3630 prior 2655 scoreMean -0.69 pv F16];B[dh]C[黑棋 胜率: 35.7% (-1.4%)
+领先: -1.3 (-0.2) 不确定度: 16.3
+(新引擎 / 1 计算量)
+贴目: 7.5
+此手用时: 2.037秒]LZ[新引擎2 47.9 2 -0.0 16.5
+move E11 visits 1 winrate 5209 prior 379 scoreMean -0.05 pv E11 info move C12 visits 1 winrate 5705 prior 761 scoreMean 0.54 pv C12 info move F16 visits 0 winrate 5204 prior 6081 scoreMean 0.52 pv F16];W[ei]C[白棋 胜率: 52.1% (-1.5%)
+领先: -0.0 (-0.1) 不确定度: 16.5
+(新引擎2 / 2 计算量)
+贴目: 7.5
+此手用时: 3.754秒]LZ[新引擎 61.4 3 -1.0 16.1
+move G16 visits 1 winrate 3863 prior 321 scoreMean -1.04 pv G16 info move G18 visits 1 winrate 3767 prior 112 scoreMean -1.08 pv G18 info move C11 visits 1 winrate 4693 prior 4071 scoreMean -0.25 pv C11];B[gd]C[黑棋 胜率: 38.6% (+2.9%)
+领先: -1.0 (+0.3) 不确定度: 16.1
+(新引擎 / 3 计算量)
+贴目: 7.5
+此手用时: 6.816秒]LZ[新引擎2 34.2 5 1.4 16.3
+move F16 visits 1 winrate 6577 prior 5344 scoreMean 1.36 pv F16 info move F18 visits 1 winrate 4787 prior 274 scoreMean -0.51 pv F18 info move E15 visits 1 winrate 4157 prior 41 scoreMean -1.15 pv E15 info move E14 visits 1 winrate 4152 prior 6 scoreMean -1.26 pv E14];W[fd]C[白棋 胜率: 65.8% (+13.7%)
+领先: 1.4 (+1.4) 不确定度: 16.3
+(新引擎2 / 5 计算量)
+贴目: 7.5
+此手用时: 3.263秒]LZ[新引擎 62.1 4 -1.1 15.7
+move H17 visits 1 winrate 3790 prior 5462 scoreMean -1.11 pv H17 info move C11 visits 1 winrate 2874 prior 2655 scoreMean -2.20 pv C11 info move G15 visits 1 winrate 2660 prior 326 scoreMean -2.24 pv G15];B[hc]C[黑棋 胜率: 37.9% (-0.7%)
+领先: -1.1 (-0.1) 不确定度: 15.7
+(新引擎 / 4 计算量)
+贴目: 7.5
+此手用时: 2.042秒]LZ[新引擎2 84.1 1 -7.0 16.1
+move E14 visits 1 winrate 1593 prior 0 scoreMean -6.99 pv E14 info move G18 visits 0 winrate 3871 prior 9976 scoreMean -2.30 pv G18 info move E17 visits 0 winrate 3871 prior 1 scoreMean -2.30 pv E17];W[ef]C[白棋 胜率: 15.9% (-49.8%)
+领先: -7.0 (-8.3) 不确定度: 16.1
+(新引擎2 / 1 计算量)
+贴目: 7.5
+此手用时: 2.13秒]LZ[新引擎 13.5 4 5.9 16.7
+move G18 visits 1 winrate 8645 prior 9961 scoreMean 5.89 pv G18 info move C11 visits 1 winrate 4909 prior 19 scoreMean 0.25 pv C11 info move G15 visits 1 winrate 4008 prior 0 scoreMean -0.73 pv G15];B[gb]C[黑棋 胜率: 86.5% (+48.5%)
+领先: 5.9 (+7.0) 不确定度: 16.7
+(新引擎 / 4 计算量)
+贴目: 7.5
+此手用时: 2.645秒]LZ[新引擎2 92.9 2 -8.8 16.8
+move D14 visits 1 winrate 712 prior 120 scoreMean -8.79 pv D14 info move C12 visits 1 winrate 742 prior 1949 scoreMean -8.06 pv C12 info move E17 visits 0 winrate 403 prior 5057 scoreMean -7.76 pv E17];W[df]C[白棋 胜率: 7.1% (-8.8%)
+领先: -8.8 (-1.8) 不确定度: 16.8
+(新引擎2 / 2 计算量)
+贴目: 7.5
+此手用时: 2.36秒]LZ[新引擎 6.8 4 7.2 16.7
+move G14 visits 1 winrate 9315 prior 74 scoreMean 7.16 pv G14 info move C14 visits 1 winrate 9281 prior 1062 scoreMean 8.14 pv C14 info move C12 visits 1 winrate 8795 prior 98 scoreMean 6.17 pv C12];B[gf]C[黑棋 胜率: 93.2% (+6.7%)
+领先: 7.2 (+1.3) 不确定度: 16.7
+(新引擎 / 4 计算量)
+贴目: 7.5
+此手用时: 2.047秒]LZ[新引擎2 93.5 1 -8.1 16.5
+move Q14 visits 1 winrate 650 prior 1185 scoreMean -8.05 pv Q14 info move Q15 visits 0 winrate 200 prior 4734 scoreMean -7.58 pv Q15 info move C12 visits 0 winrate 200 prior 1038 scoreMean -7.58 pv C12])

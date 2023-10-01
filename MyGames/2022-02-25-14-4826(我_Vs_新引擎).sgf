@@ -1,0 +1,19 @@
+(;DT[2022-02-25]KM[7.5]PB[我]RE[]DZ[G]SZ[19]PW[新引擎]CA[UTF-8]AP[Lizzie: yzy2.4.7]C[引擎规则: 中国规则];B[gf]C[黑棋 胜率: 29.2% (-20.8%)
+领先: -2.3  不确定度: 16.5
+(新引擎 / 3 计算量)
+贴目: 7.5]LZ[新引擎 29.2 3 2.3 16.5
+move C16 visits 1 winrate 7077 prior 3242 scoreMean 2.26 pv C16 info move D17 visits 1 winrate 6867 prior 2272 scoreMean 1.94 pv D17 info move D16 visits 1 winrate 7139 prior 1333 scoreMean 2.39 pv D16];W[dd]C[白棋 胜率: 70.8% (+20.8%)
+领先: 2.3  不确定度: 16.5
+(新引擎 / 6 计算量)
+贴目: 7.5];B[dg]C[黑棋 胜率: 22.8% (-6.4%)
+领先: -3.5  不确定度: 16.2
+(新引擎 / 3 计算量)
+贴目: 7.5]LZ[新引擎 22.8 3 3.5 16.2
+move D4 visits 1 winrate 7715 prior 3144 scoreMean 3.47 pv D4 info move Q16 visits 1 winrate 7688 prior 2216 scoreMean 3.41 pv Q16 info move Q17 visits 1 winrate 7927 prior 556 scoreMean 3.74 pv Q17];W[pd]C[白棋 胜率: 77.2% (+6.4%)
+领先: 3.5 (-1.2) 不确定度: 16.2
+(新引擎 / 6 计算量)
+贴目: 7.5];B[do]C[黑棋 胜率: 18.8% (-4.1%)
+领先: -4.1  不确定度: 16.2
+(新引擎 / 6 计算量)
+贴目: 7.5]LZ[新引擎 18.8 6 4.1 16.2
+move Q4 visits 1 winrate 8121 prior 3030 scoreMean 4.12 pv Q4 info move C3 visits 1 winrate 8369 prior 2167 scoreMean 4.53 pv C3 info move Q3 visits 1 winrate 8261 prior 2273 scoreMean 4.30 pv Q3 info move R4 visits 1 winrate 8204 prior 1478 scoreMean 4.15 pv R4];W[cq])

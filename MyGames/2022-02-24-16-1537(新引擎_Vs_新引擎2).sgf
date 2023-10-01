@@ -1,0 +1,26 @@
+(;DT[2022-02-24]KM[7.5]PB[新引擎]RE[]DZ[KW]PW[新引擎2]SZ[19]CA[UTF-8]AP[Lizzie: yzy2.4.7]C[黑引擎规则: 中国规则
+白引擎规则: 中国规则]LZOP[新引擎 61.1 6 -1.0 17.4
+move R16 visits 1 winrate 3885 prior 685 scoreMean -0.97 pv R16 info move R4 visits 1 winrate 3885 prior 685 scoreMean -0.97 pv R4 info move C16 visits 1 winrate 3885 prior 685 scoreMean -0.97 pv C16];B[qd]C[白棋 胜率: 61.8% 
+领先: 0.9  不确定度: 17.0
+(新引擎2 / 6 计算量)
+贴目: 7.5]LZ[新引擎2 38.2 6 0.9 17.0
+move D16 visits 1 winrate 6184 prior 4491 scoreMean 0.89 pv D16 info move D4 visits 1 winrate 6100 prior 1327 scoreMean 0.86 pv D4 info move D17 visits 1 winrate 6113 prior 334 scoreMean 0.87 pv D17];W[dd]C[黑棋 胜率: 38.9% (+0.1%)
+领先: -0.9 (+0.0) 不确定度: 17.0
+(新引擎 / 5 计算量)
+贴目: 7.5]LZ[新引擎 61.1 5 -0.9 17.0
+move Q3 visits 1 winrate 3894 prior 1618 scoreMean -0.92 pv Q3 info move C4 visits 1 winrate 3863 prior 968 scoreMean -1.00 pv C4 info move O16 visits 1 winrate 3951 prior 912 scoreMean -1.08 pv O16 info move P16 visits 1 winrate 4011 prior 767 scoreMean -0.99 pv P16];B[pq]C[白棋 胜率: 61.4% (-0.5%)
+领先: 1.0 (+0.1) 不确定度: 16.8
+(新引擎2 / 5 计算量)
+贴目: 7.5
+此手用时: 2.081秒]LZ[新引擎2 38.6 5 1.0 16.8
+move D3 visits 1 winrate 6135 prior 4178 scoreMean 1.00 pv D3 info move D4 visits 1 winrate 6152 prior 3420 scoreMean 1.01 pv D4 info move C3 visits 1 winrate 5924 prior 94 scoreMean 0.76 pv C3 info move E4 visits 1 winrate 5673 prior 52 scoreMean 0.49 pv E4];W[dq]C[黑棋 胜率: 38.4% (-0.5%)
+领先: -0.9 (-0.0) 不确定度: 17.0
+(新引擎 / 5 计算量)
+贴目: 7.5
+此手用时: 2.021秒]LZ[新引擎 61.6 5 -0.9 17.0
+move C5 visits 1 winrate 3843 prior 2359 scoreMean -0.93 pv C5 info move O16 visits 1 winrate 3886 prior 2355 scoreMean -0.88 pv O16 info move P16 visits 1 winrate 4041 prior 1555 scoreMean -0.83 pv P16 info move P17 visits 1 winrate 3903 prior 612 scoreMean -0.99 pv P17];B[co]C[白棋 胜率: 1.7% (-59.7%)
+领先: -12.4 (-13.4) 不确定度: 16.4
+(新引擎2 / 3 计算量)
+贴目: 7.5
+此手用时: 2.089秒]LZ[新引擎2 98.3 3 -12.4 16.4
+move D7 visits 1 winrate 167 prior 855 scoreMean -12.39 pv D7 info move C8 visits 1 winrate 181 prior 596 scoreMean -12.48 pv C8 info move Q5 visits 1 winrate 141 prior 429 scoreMean -12.63 pv Q5];W[dm])
