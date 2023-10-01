@@ -185,7 +185,7 @@
     "new-engine-game-handicap": 0,
     "show-suggestion-order": true,
     "extra-mode": 0,
-    "win-rate-always-black": false,
+    "win-rate-always-black": true,
     "show-move-number": false,
     "use-num-coords-from-bottom": false,
     "winrate-stroke-width": 1.7,
@@ -279,7 +279,7 @@
       0,
       200
     ],
-    "show-katago-score-lead-with-komi": false,
+    "show-katago-score-lead-with-komi": true,
     "show-pv-visits": false,
     "white-suggestion-order-white": false,
     "show-subboard": false,

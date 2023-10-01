@@ -1070,7 +1070,8 @@ public class Leelaz {
             resigned = true;
         }
     }
-
+    
+    //读取gtp引擎命令行信息
     private void parseLine(String line) {
         // System.out.println(line);
         synchronized (this) {
