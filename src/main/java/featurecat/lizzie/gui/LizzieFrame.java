@@ -5123,10 +5123,13 @@ public class LizzieFrame extends JFrame {
         if (EngineManager.isEngineGame) {
             drawString(g, posX, posY + height * 17 / 20, uiFont, Font.PLAIN, text, height / 4, width * 20 / 21, 0, false);
         } else {
-            if (curData.blackToPlay) {
-                curWR = whiteWR;
-            }
             double wr = validLastWinrate ? 100 - lastWR - curWR : 0;
+            if (curData.blackToPlay&&!curData.lastMoveColor.isEmpty()) {
+                curWR = whiteWR;
+                if(!Lizzie.frame.isPlayingAgainstLeelaz){
+                    wr=  curWR - lastWR;
+                }
+            }
             double score = validLastWinrate ? (-lastScore) - curScore : 0;
             text = text + " " + Lizzie.resourceBundle.getString("LizzieFrame.display.lastMove");
             int lastNo = Lizzie.board.getData().lastMoveMatchCandidteNo;

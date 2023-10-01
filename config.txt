@@ -98,7 +98,7 @@
     "show-winrate-in-suggestion": true,
     "show-scoremean-in-suggestion": true,
     "show-score-as-diff": false,
-    "auto-check-date": "20231001",
+    "auto-check-date": "20231002",
     "new-move-number-in-branch": true,
     "winrate-line-color": [
       0,
@@ -279,7 +279,7 @@
       0,
       200
     ],
-    "show-katago-score-lead-with-komi": true,
+    "show-katago-score-lead-with-komi": false,
     "show-pv-visits": false,
     "white-suggestion-order-white": false,
     "show-subboard": false,
