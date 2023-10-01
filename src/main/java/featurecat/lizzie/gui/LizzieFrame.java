@@ -17,17 +17,7 @@ import featurecat.lizzie.analysis.KataEstimate;
 import featurecat.lizzie.analysis.Leelaz;
 import featurecat.lizzie.analysis.MoveData;
 import featurecat.lizzie.analysis.ReadBoard;
-import featurecat.lizzie.rules.Board;
-import featurecat.lizzie.rules.BoardData;
-import featurecat.lizzie.rules.BoardHistoryNode;
-import featurecat.lizzie.rules.EngineCountDown;
-import featurecat.lizzie.rules.GIBParser;
-import featurecat.lizzie.rules.GroupInfo;
-import featurecat.lizzie.rules.MoveLinkedList;
-import featurecat.lizzie.rules.Movelist;
-import featurecat.lizzie.rules.NodeInfo;
-import featurecat.lizzie.rules.SGFParser;
-import featurecat.lizzie.rules.Stone;
+import featurecat.lizzie.rules.*;
 import featurecat.lizzie.util.Utils;
 
 import java.awt.*;
@@ -4954,7 +4944,7 @@ public class LizzieFrame extends JFrame {
             }
             return;
         }
-        double lastWR = 50; // winrate the previous move
+        double lastWR = -1; // winrate the previous move
         double lastScore = 0;
         boolean validLastWinrate = false; // whether it was actually calculated
         Optional<BoardHistoryNode> previous = Lizzie.board.getHistory().getCurrentHistoryNode().previous();
@@ -5074,7 +5064,6 @@ public class LizzieFrame extends JFrame {
                             score = -score - curData.getKomi();
                         }
                     } else {
-
                         if (!Lizzie.config.showKataGoScoreLeadWithKomi) {
                             score = -score;
                         }else{
@@ -5102,14 +5091,12 @@ public class LizzieFrame extends JFrame {
             if (curData.lastMoveColor.isEmpty() && !Lizzie.frame.isPlayingAgainstLeelaz) {
                 text = "";
             }
-
-
             if (Lizzie.config.showKataGoScoreLeadWithKomi) {
                 text = text + (Lizzie.resourceBundle.getString("LizzieFrame.scoreLeadWithKomi")) + String.format(Locale.ENGLISH, "%.1f", scoreLead);
             } else if (curData.blackToPlay) {
-                text = text + ("盘面+贴目:") + String.format(Locale.ENGLISH, "%.1f", scoreLead);
+                text = text + ("盘面数+贴目=") + String.format(Locale.ENGLISH, "%.1f", scoreLead);
             } else {
-                text = text + ("盘面-贴目:") + String.format(Locale.ENGLISH, "%.1f", scoreLead);
+                text = text + ("盘面数-贴目=") + String.format(Locale.ENGLISH, "%.1f", scoreLead);
             }
 //            text = text + (Lizzie.config.showKataGoScoreLeadWithKomi ? Lizzie.resourceBundle.getString("LizzieFrame.scoreLeadWithKomi") : Lizzie.resourceBundle.getString("LizzieFrame.scoreLeadJustScore")) + String.format(Locale.ENGLISH, "%.1f", scoreLead);
             if (EngineManager.isEngineGame && !Lizzie.leelaz.isSai) {
@@ -5117,20 +5104,39 @@ public class LizzieFrame extends JFrame {
             }
         }
         if (Lizzie.leelaz.isColorEngine) {
-            // "阶段:""贴目:"
             text = text + Lizzie.resourceBundle.getString("LizzieFrame.scoreStdev") + Lizzie.leelaz.stage + " " + Lizzie.resourceBundle.getString("LizzieFrame.komi") + Lizzie.leelaz.komi;
         }
         if (EngineManager.isEngineGame) {
             drawString(g, posX, posY + height * 17 / 20, uiFont, Font.PLAIN, text, height / 4, width * 20 / 21, 0, false);
         } else {
             double wr = validLastWinrate ? 100 - lastWR - curWR : 0;
-            if (curData.blackToPlay&&!curData.lastMoveColor.isEmpty()) {
-                curWR = whiteWR;
-                if(!Lizzie.frame.isPlayingAgainstLeelaz){
+            if(Lizzie.frame.isPlayingAgainstLeelaz){
+                if (curData.blackToPlay&&!curData.lastMoveColor.isEmpty()) {
+                    curWR = whiteWR;
+                    if(curData.lastMoveColor.isWhite()){
+                        if(lastWR==-1){
+                            wr = curWR;
+                        }else{
+                            wr=  curWR -(100 - lastWR);
+                        }
+                    }else{
+                        wr=  curWR -lastWR;
+                    }
+                }
+            }else{
+                if (curData.blackToPlay&&!curData.lastMoveColor.isEmpty()) {
+                    curWR = whiteWR;
                     wr=  curWR - lastWR;
                 }
             }
             double score = validLastWinrate ? (-lastScore) - curScore : 0;
+            if(Lizzie.frame.isPlayingAgainstLeelaz){
+                if (curData.blackToPlay&&!curData.lastMoveColor.isEmpty()) {
+                    if(curData.lastMoveColor.isWhite()){
+                        score = - score;
+                    }
+                }
+            }
             text = text + " " + Lizzie.resourceBundle.getString("LizzieFrame.display.lastMove");
             int lastNo = Lizzie.board.getData().lastMoveMatchCandidteNo;
             if (lastNo > 0) {

@@ -1,11 +1,11 @@
 {"save": {
-  "save-auto-game-move-number2": 8,
-  "save-auto-game-move-list1": "11,2,w_17,0,b_4,4,w_18,1,b_2,5,w_18,0,b_5,2,w_0,0,b_2,13,w_3,3,b_9,3,b_15,3,b_3,9,b_9,9,b_15,9,b_3,15,b_9,15,b_15,15,b",
-  "save-auto-game-move-list2": "18,18,w_0,18,b_15,16,w_1,0,b_0,0,w_18,0,b_3,3,w_15,3,b",
-  "save-auto-game-move-number1": 9,
-  "save-auto-game-time1": "2023-10-02 01:44:27",
-  "save-auto-game-index2": -5,
-  "save-auto-game-time2": "2023-10-02 02:06:46",
+  "save-auto-game-move-number2": 6,
+  "save-auto-game-move-list1": "0,18,b_4,10,w_2,9,b_2,11,w_2,15,b_2,13,w_3,3,b_9,3,b_15,3,b_3,9,b_9,9,b_15,9,b_3,15,b_9,15,b_15,15,b",
+  "save-auto-game-move-list2": "0,18,b_4,10,w_2,9,b_2,11,w_2,15,b_2,13,w_3,3,b_9,3,b_15,3,b_3,9,b_9,9,b_15,9,b_3,15,b_9,15,b_15,15,b",
+  "save-auto-game-move-number1": 6,
+  "save-auto-game-time1": "2023-10-02 04:35:31",
+  "save-auto-game-index2": -1,
+  "save-auto-game-time2": "2023-10-02 04:35:04",
   "save-auto-game-index1": 1,
   "save-config": true
 }}
