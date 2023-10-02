@@ -4930,6 +4930,9 @@ public class LizzieFrame extends JFrame {
         if (width < 10 || height < 5) {
             return;
         }
+        if (!Lizzie.leelaz.isPondering()) {
+            return;
+        }
         g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         if (isInPlayMode()) {
             g.setColor(new Color(0, 0, 0, 130));
@@ -5016,60 +5019,31 @@ public class LizzieFrame extends JFrame {
         strokeRadius = 2;
         g.setColor(Color.WHITE);
         String text = "";
-        double selfReduceWinrate=0;
+        double selfReduceWinrate = 0;
         boolean isKataStyle = false;
-        if (curData.isKataData ||
-                curData.isSaiData ||
-                (Lizzie.leelaz.isKatago && !EngineManager.isEmpty) ||
-                (EngineManager.isEngineGame &&
-                        (Lizzie.engineManager.engineList.get(EngineManager.engineGameInfo.blackEngineIndex).isKatago
-                                || Lizzie.engineManager.engineList.get(EngineManager.engineGameInfo.whiteEngineIndex).isKatago))) {
+        if (curData.isKataData || curData.isSaiData || (Lizzie.leelaz.isKatago && !EngineManager.isEmpty) || (EngineManager.isEngineGame && (Lizzie.engineManager.engineList.get(EngineManager.engineGameInfo.blackEngineIndex).isKatago || Lizzie.engineManager.engineList.get(EngineManager.engineGameInfo.whiteEngineIndex).isKatago))) {
             isKataStyle = true;
-            if( (Lizzie.board.getHistory().getCurrentHistoryNode().previous().isPresent()||Lizzie.frame.isAnaPlayingAgainstLeelaz)&&!Lizzie.frame.isPlayingAgainstLeelaz){
-                BoardHistoryNode preNode = Lizzie.board.getHistory().getCurrentHistoryNode().previous().get();
-                BoardData boardDataPrevious = preNode.getData();
-                double selfPreviousWinrate = 100- boardDataPrevious.winrate;
-                selfReduceWinrate = curData.winrate - selfPreviousWinrate;
-                if(!curData.blackToPlay){
-                    //胜率变化情况
-                    selfReduceWinrate = - selfReduceWinrate;
-                }
-                score = curData.getLeadBorderKomi() - boardDataPrevious.getLeadBorderKomi();
-
-            }
-            scoreLead = curData.getLeadBorderKomi();
-
             try {
-                if (Lizzie.frame.isPlayingAgainstLeelaz) {
-                    BoardHistoryNode currentNode = Lizzie.board.getHistory().getCurrentHistoryNode().previous().get();
-                    if(!curData.bestMoves.isEmpty()){
-                        currentNode  = Lizzie.board.getHistory().getCurrentHistoryNode();
-                    }
-                    if(currentNode.getData().blackToPlay){
-                        currentNode = currentNode.previous().get();
-                    }
-                    BoardHistoryNode preNode = currentNode.previous().get();
-                    BoardHistoryNode preNodePre = preNode.previous().get();
-                    curData = currentNode.getData();
-                    if(!curData.blackToPlay){
-                        BoardData preNodeData = preNode.getData();
-                        double selfPreviousWinrate = 100 - preNodeData.winrate;
-                        selfReduceWinrate = curData.winrate - selfPreviousWinrate;
-                        if (!curData.blackToPlay) {
-                            //胜率变化情况
+                scoreLead = curData.getLeadBorderKomi();
+                List<MoveData> best = Lizzie.frame.getBestMoves();
+                if (curData.lastMoveColor.isEmpty()) {
+                    selfReduceWinrate = 0;
+                    score = 0;
+                } else {
+                    BoardHistoryNode currentNode = Lizzie.board.getHistory().getCurrentHistoryNode();
+                    BoardHistoryNode preSameColor = Lizzie.board.getHistory().getCurrentHistoryNode().previous().get().previous().get();
+                    if (currentNode.getData().blackToPlay && preSameColor.getData().blackToPlay || !currentNode.getData().blackToPlay && !preSameColor.getData().blackToPlay) {
+                        selfReduceWinrate = best.get(0).winrate - preSameColor.getData().winrate;
+                        score = best.get(0).scoreMean - (preSameColor.getData().scoreMean);
+                        if (!currentNode.getData().blackToPlay) {
                             selfReduceWinrate = -selfReduceWinrate;
+                            score = -score;
                         }
-                        score =  curData.scoreMean - preNodePre.getData().scoreMean;
-                        score=-score;
                     }
                 }
-
-            }catch (Exception e){
-
-
+            } catch (Exception e) {
+                System.err.println(e);
             }
-
-
             if (Lizzie.config.showKataGoScoreLeadWithKomi) {
                 text = text + "黑棋盘面" + String.format(Locale.ENGLISH, "%.1f", scoreLead);
             } else {
@@ -5090,7 +5064,7 @@ public class LizzieFrame extends JFrame {
             int lastNo = Lizzie.board.getData().lastMoveMatchCandidteNo;
             if (lastNo > 0) {
                 text += "(#" + lastNo + ")";
-            }else{
+            } else {
                 text += "(#) ";
             }
             text += ": " + ((selfReduceWinrate > 0 ? "+" : "-") + String.format(Locale.ENGLISH, "%.1f%%", Math.abs(selfReduceWinrate)));
@@ -5099,11 +5073,6 @@ public class LizzieFrame extends JFrame {
             }
             drawString(g, posX, posY + height * 17 / 20, uiFont, Font.PLAIN, text, height / 4, width * 20 / 21, 0, false);
         }
-
-
-
-
-
 
 
         if (validWinrate || validLastWinrate) {
@@ -6361,15 +6330,16 @@ public class LizzieFrame extends JFrame {
                 }
             } else {
                 if (EngineManager.isEngineGame && Lizzie.config.showPreviousBestmovesInEngineGame && Lizzie.board.getHistory().getCurrentHistoryNode().previous().isPresent())
-                    comment = Lizzie.board.getHistory().getCurrentHistoryNode().previous().get().getData().comment;
-                else {
+//                    comment = Lizzie.board.getHistory().getCurrentHistoryNode().previous().get().getData().comment;
+                {
+                } else {
                     if (Lizzie.board.getHistory().getData().comment.equals("")) {
                         if ((Lizzie.leelaz.isPondering() || EngineManager.isEngineGame || Lizzie.frame.isPlayingAgainstLeelaz) && Lizzie.config.appendWinrateToComment && Lizzie.board.getHistory().getCurrentHistoryNode().previous().isPresent()) {
-                            comment = Lizzie.board.getHistory().getCurrentHistoryNode().previous().get().getData().comment;
+//                            comment = Lizzie.board.getHistory().getCurrentHistoryNode().previous().get().getData().comment;
                         }
                     } else {
                         BoardData curData = Lizzie.board.getHistory().getData();
-                        comment = Lizzie.board.getHistory().getData().comment;
+//                        comment = Lizzie.board.getHistory().getData().comment;
                     }
                     if (EngineManager.isEngineGame) {
                         int index = comment.indexOf("\n" + Lizzie.resourceBundle.getString("SGFParse.moveTime"));
@@ -6378,7 +6348,7 @@ public class LizzieFrame extends JFrame {
                 }
             }
             if (EngineManager.isEngineGame && !Lizzie.config.showPreviousBestmovesInEngineGame) {
-                comment = comment + (comment.equals("") ? "" : "\n") + Lizzie.resourceBundle.getString("SGFParse.moveTime") + (System.currentTimeMillis() - (EngineManager.engineGameInfo.isGenmove ? (Lizzie.engineManager.engineList.get(Lizzie.board.getHistory().isBlacksTurn() ? EngineManager.engineGameInfo.blackEngineIndex : EngineManager.engineGameInfo.whiteEngineIndex).pkMoveStartTime) : Lizzie.leelaz.getStartPonderTime())) / 1000 + Lizzie.resourceBundle.getString("SGFParse.seconds");
+//                comment = comment + (comment.equals("") ? "" : "\n") + Lizzie.resourceBundle.getString("SGFParse.moveTime") + (System.currentTimeMillis() - (EngineManager.engineGameInfo.isGenmove ? (Lizzie.engineManager.engineList.get(Lizzie.board.getHistory().isBlacksTurn() ? EngineManager.engineGameInfo.blackEngineIndex : EngineManager.engineGameInfo.whiteEngineIndex).pkMoveStartTime) : Lizzie.leelaz.getStartPonderTime())) / 1000 + Lizzie.resourceBundle.getString("SGFParse.seconds");
             }
         }
         if (Lizzie.config.commentFontSize <= 0) {

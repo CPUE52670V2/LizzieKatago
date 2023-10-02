@@ -1,69 +1,21 @@
 (;DT[2023-10-02]KM[7.5]PB[我]RE[]DZ[G]PW[Katago]SZ[19]HA[9]CA[UTF-8]AP[Lizzie: yzy2.4.7]AB[dd][dj][dp][jd][jj][jp][pd][pj][pp]C[白棋 胜率: 0.0% 
-领先: -90.9  不确定度: 20.2
+领先: -91.0  不确定度: 20.2
+(Katago / 815 计算量)
+贴目: 7.5 激进度: 2.75]LZOP[Katago 100.0 815 -91.0 20.2 2.75
+move C6 visits 524 winrate 0 prior 311 scoreMean -91.00 pv C6 C5 D6 F4 G6 F9 C14 C15 info move C14 visits 524 winrate 0 prior 311 scoreMean -91.00 pv C14 C15 D14 F16 G14 F11 C6 C5 info move R6 visits 524 winrate 0 prior 311 scoreMean -91.00 pv R6 R5 Q6 O4 N6 O9 R14 R15 info move R14 visits 524 winrate 0 prior 311 scoreMean -91.00 pv R14 R15 Q14 O16 N14 O11 R6 R5 info move O17 visits 524 winrate 0 prior 311 scoreMean -91.00 pv O17 P17 O16 Q14 O13 L14 F17 E17];W[cn]C[白棋 胜率: 0.0% 
+领先: -91.0  不确定度: 20.2
+(Katago / 815 计算量)
+贴目: 7.5 激进度: 2.75]LZ[Katago 0.0 1.6k 91.1 20.2 -2.75
+move C5 visits 661 winrate 9999 prior 2559 scoreMean 91.13 pv C5 D6 F4 G6 D8 C14 C15 D14 F16 info move C8 visits 167 winrate 9999 prior 369 scoreMean 91.26 pv C8 G5 E5 K6 info move C3 visits 140 winrate 9999 prior 1022 scoreMean 90.79 pv C3 D8 F10 E5 D5 info move D6 visits 110 winrate 9999 prior 916 scoreMean 91.10 pv D6 D7 E7 D8 C5 E6 D5 E10 info move C4 visits 89 winrate 9999 prior 855 scoreMean 90.16 pv C4 C8 B10 E9 D9];B[qq]C[黑棋 胜率: 100.0% (+0.0%)
+领先: 91.1 (-0.1) 不确定度: 20.2
+(Katago / 1.6k 计算量)
+贴目: 7.5 激进度: -2.75]LZ[Katago 100.0 1.1k -90.0 20.4 2.75
+move P5 visits 281 winrate 0 prior 1153 scoreMean -90.04 pv P5 O4 R8 R6 F3 info move R8 visits 189 winrate 0 prior 811 scoreMean -90.01 pv R8 C5 D6 F4 G6 D8 G9 info move M3 visits 115 winrate 0 prior 744 scoreMean -90.23 pv M3 C5 D6 F4 G6 F9 info move R14 visits 51 winrate 0 prior 396 scoreMean -90.45 pv R14 C5 D6 F4 G6 R15 Q14 info move F17 visits 35 winrate 0 prior 563 scoreMean -91.17 pv F17 E17 F16 D14 F13 info move F7 visits 34 winrate 0 prior 386 scoreMean -90.30 pv F7 E5 D8 B5];W[oo]C[白棋 胜率: 0.0% (+0.0%)
+领先: -90.0 (-1.1) 不确定度: 20.4
 (Katago / 1.1k 计算量)
-贴目: 7.5 激进度: 2.75]LZOP[Katago 100.0 1.1k -90.9 20.2 2.75
-move C6 visits 901 winrate 0 prior 416 scoreMean -90.90 pv C6 C5 D6 F4 G6 G9 C14 C15 info move C14 visits 901 winrate 0 prior 416 scoreMean -90.90 pv C14 C15 D14 F16 G14 G11 C6 C5 info move R6 visits 901 winrate 0 prior 416 scoreMean -90.90 pv R6 R5 Q6 O4 N6 N9 R14 R15 info move R14 visits 901 winrate 0 prior 416 scoreMean -90.90 pv R14 R15 Q14 O16 N14 N11 R6 R5 info move O17 visits 901 winrate 0 prior 416 scoreMean -90.90 pv O17 P17 O16 Q14 O13 L13 F17 E17];W[cn]C[白棋 胜率: 0.0% 
-领先: -90.9  不确定度: 20.2
-(Katago / 1.1k 计算量)
-贴目: 7.5 激进度: 2.75];B[gp]LZ[Katago 100.0 1.1k -89.8 20.4 2.75
-move C4 visits 572 winrate 0 prior 1148 scoreMean -89.78 pv C4 C3 B3 D3 B5 D5 C8 C5 B4 D7 C7 O3 info move E5 visits 81 winrate 0 prior 799 scoreMean -90.16 pv E5 E4 B4 C7 D7 C8 info move O17 visits 67 winrate 0 prior 890 scoreMean -90.39 pv O17 P17 O16 Q14 O13 C4 info move B4 visits 75 winrate 0 prior 614 scoreMean -89.94 pv B4 C3 C8 D7 D8 info move C8 visits 56 winrate 0 prior 847 scoreMean -90.51 pv C8 C5 D6 C9 E9 E10 info move R14 visits 42 winrate 0 prior 639 scoreMean -90.75 pv R14 R15 Q14 O16 N14];W[cp]C[白棋 胜率: 0.0% (+0.0%)
-领先: -89.8 (-1.1) 不确定度: 20.4
-(Katago / 1.1k 计算量)
-贴目: 7.5 激进度: 2.75];B[iq]LZ[Katago 100.0 1.1k -82.0 20.5 2.75
-move C3 visits 872 winrate 0 prior 2332 scoreMean -82.00 pv C3 Q7 P11 Q3 P10 Q9 info move D3 visits 169 winrate 0 prior 3249 scoreMean -83.53 pv D3 C3 D2 E4 B4 E3 E2 info move R6 visits 10 winrate 0 prior 341 scoreMean -85.35 pv R6 C3 D3 E4 info move D5 visits 10 winrate 0 prior 454 scoreMean -85.88 pv D5 C3 D3 E4 info move Q6 visits 4 winrate 0 prior 156 scoreMean -86.30 pv Q6 C3 D3];W[cq]C[白棋 胜率: 0.0% (+0.0%)
-领先: -82.0 (-7.8) 不确定度: 20.5
-(Katago / 1.1k 计算量)
-贴目: 7.5 激进度: 2.75]LZ[Katago 0.0 2.1k 82.6 20.9 -2.75
-move Q7 visits 329 winrate 9999 prior 204 scoreMean 82.59 pv Q7 P11 Q3 Q11 R10 P10 O8 info move Q6 visits 478 winrate 9999 prior 1630 scoreMean 82.21 pv Q6 N10 N12 N7 D5 info move R6 visits 223 winrate 9999 prior 768 scoreMean 82.34 pv R6 O10 O8 P9 Q12 info move D6 visits 221 winrate 9999 prior 1237 scoreMean 81.82 pv D6 D7 D5 C7 Q6 D3 info move D5 visits 180 winrate 9999 prior 1556 scoreMean 81.49 pv D5 R6 D3 B7 R4 R8];B[lq]C[黑棋 胜率: 100.0% (+0.0%)
-领先: 82.6 (-0.6) 不确定度: 20.9
-(Katago / 2.1k 计算量)
-贴目: 7.5 激进度: -2.75]LZ[Katago 100.0 1.1k -78.4 21.5 2.75
-move R6 visits 312 winrate 0 prior 1652 scoreMean -78.43 pv R6 S4 R8 R9 Q8 O10 info move R3 visits 326 winrate 0 prior 1135 scoreMean -78.04 pv R3 R4 Q3 P3 P2 O3 S4 S5 S3 R6 O2 info move R4 visits 101 winrate 0 prior 751 scoreMean -78.56 pv R4 R5 Q3 Q5 R3 O3 info move O10 visits 66 winrate 0 prior 352 scoreMean -78.34 pv O10 R5 O8 Q8 O12 info move O17 visits 47 winrate 0 prior 715 scoreMean -78.99 pv O17 R5 O10 P12 info move R14 visits 43 winrate 0 prior 493 scoreMean -78.71 pv R14 R5 O10 P12];W[qn]C[白棋 胜率: 0.0% (+0.0%)
-领先: -78.4 (-4.2) 不确定度: 21.5
-(Katago / 1.1k 计算量)
-贴目: 7.5 激进度: 2.75];B[nq]LZ[Katago 100.0 1.1k -72.6 20.0 2.75
-move R4 visits 799 winrate 0 prior 2052 scoreMean -72.62 pv R4 R3 Q3 Q2 Q5 P3 S10 R11 S11 info move S4 visits 115 winrate 0 prior 1990 scoreMean -73.70 pv S4 R7 S7 Q7 S8 R5 info move R8 visits 40 winrate 0 prior 718 scoreMean -73.37 pv R8 R5 S5 Q6 S7 info move Q9 visits 10 winrate 0 prior 201 scoreMean -74.34 pv Q9 R10 R4 info move R9 visits 9 winrate 0 prior 197 scoreMean -74.46 pv R9 R10 Q9];W[qp]C[白棋 胜率: 0.0% (+0.0%)
-领先: -72.6 (-5.8) 不确定度: 20.0
-(Katago / 1.1k 计算量)
-贴目: 7.5 激进度: 2.75];B[aa]LZ[Katago 100.0 1.2k -56.4 18.9 2.75
-move R3 visits 942 winrate 1 prior 2405 scoreMean -56.37 pv R3 Q7 R7 D7 C7 Q8 info move Q3 visits 139 winrate 1 prior 2240 scoreMean -57.49 pv Q3 R3 Q2 P4 S4 D7 C7 Q7 info move Q5 visits 104 winrate 1 prior 2296 scoreMean -57.83 pv Q5 R3 Q3 P4 S3 R2 S2 C7 D6 info move Q17 visits 2 winrate 1 prior 52 scoreMean -58.08 pv Q17 R17 info move O17 visits 2 winrate 1 prior 65 scoreMean -59.64 pv O17 R3 info move R17 visits 2 winrate 1 prior 61 scoreMean -58.98 pv R17 R3];W[qq]C[白棋 胜率: 0.0% (+0.0%)
-领先: -56.4 (-16.3) 不确定度: 18.9
+贴目: 7.5 激进度: 2.75]LZ[Katago 0.0 1.2k 90.0 20.4 -2.75
+move O4 visits 186 winrate 9999 prior 1259 scoreMean 89.98 pv O4 R8 R9 Q8 O10 Q5 info move N4 visits 217 winrate 9999 prior 1700 scoreMean 90.09 pv N4 Q5 R8 Q7 P4 O5 info move Q7 visits 206 winrate 9999 prior 1592 scoreMean 90.00 pv Q7 P4 M3 N4 Q6 M4 info move Q6 visits 195 winrate 9999 prior 1248 scoreMean 90.01 pv Q6 M3 O3 F3 E5 info move C5 visits 115 winrate 9999 prior 792 scoreMean 90.06 pv C5 Q5 P4 O5 O4 N5];B[hq]C[黑棋 胜率: 100.0% (+0.0%)
+领先: 90.0 (+0.1) 不确定度: 20.4
 (Katago / 1.2k 计算量)
-贴目: 7.5 激进度: 2.75];B[ba]LZ[Katago 100.0 1.1k -46.5 18.6 2.75
-move O17 visits 228 winrate 2 prior 1526 scoreMean -46.46 pv O17 P17 O16 Q14 O13 M16 F17 info move F17 visits 139 winrate 2 prior 1262 scoreMean -46.63 pv F17 E17 F16 D14 E14 E13 info move R14 visits 130 winrate 2 prior 917 scoreMean -46.57 pv R14 R15 Q14 O16 N14 Q12 info move C14 visits 86 winrate 2 prior 790 scoreMean -46.62 pv C14 E14 F17 E17 info move H17 visits 82 winrate 2 prior 563 scoreMean -46.32 pv H17 F17 O17 L17 Q14 info move D14 visits 43 winrate 2 prior 187 scoreMean -46.30 pv D14 D12 G15];W[nc]C[白棋 胜率: 0.0% (+0.0%)
-领先: -46.5 (-9.9) 不确定度: 18.6
-(Katago / 1.1k 计算量)
-贴目: 7.5 激进度: 2.75]LZ[Katago 0.0 2.7k 47.0 18.8 -2.75
-move P17 visits 1438 winrate 9997 prior 1880 scoreMean 46.98 pv P17 O16 Q14 O13 N14 O14 N15 Q15 info move O16 visits 431 winrate 9997 prior 1604 scoreMean 46.60 pv O16 N16 O15 P18 R17 M17 M15 Q17 info move Q18 visits 103 winrate 9997 prior 710 scoreMean 45.95 pv Q18 R14 Q14 Q13 P14 info move C7 visits 105 winrate 9997 prior 519 scoreMean 46.22 pv C7 D6 P17 O16 Q14 C14 info move Q17 visits 102 winrate 9997 prior 746 scoreMean 45.96 pv Q17 F17 M17 Q13 info move R7 visits 92 winrate 9997 prior 655 scoreMean 45.94 pv R7 Q7 R8 Q6 P17 O16];B[bd]C[黑棋 胜率: 100.0% (+0.0%)
-领先: 47.0 (-0.5) 不确定度: 18.8
-(Katago / 2.7k 计算量)
-贴目: 7.5 激进度: -2.75]LZ[Katago 100.0 1.0k -43.0 18.7 2.75
-move H17 visits 290 winrate 3 prior 1246 scoreMean -43.02 pv H17 O16 N16 O15 P17 Q17 info move Q18 visits 119 winrate 2 prior 723 scoreMean -43.25 pv Q18 R17 P15 Q15 P14 Q14 info move Q14 visits 82 winrate 3 prior 533 scoreMean -43.31 pv Q14 O16 N16 O15 P17 Q15 R17 info move R14 visits 65 winrate 3 prior 669 scoreMean -43.54 pv R14 O16 N16 O15 R17 info move E11 visits 61 winrate 2 prior 642 scoreMean -43.24 pv E11 P17 R17 O16 R16];W[hc]C[白棋 胜率: 0.0% (+0.0%)
-领先: -43.0 (-4.0) 不确定度: 18.7
-(Katago / 1.0k 计算量)
-贴目: 7.5 激进度: 2.75]LZ[Katago 0.0 3.4k 43.3 18.5 -2.75
-move O16 visits 885 winrate 9997 prior 1346 scoreMean 43.30 pv O16 N16 O15 P17 Q17 N15 Q14 K17 L17 info move H16 visits 836 winrate 9996 prior 1184 scoreMean 43.44 pv H16 G16 H15 J17 G15 L18 C7 D7 info move K18 visits 395 winrate 9997 prior 1141 scoreMean 43.16 pv K18 H14 Q17 E16 D15 info move J17 visits 348 winrate 9997 prior 978 scoreMean 43.05 pv J17 H16 K14 Q18 R17 O15 Q14 info move P17 visits 179 winrate 9997 prior 1070 scoreMean 42.62 pv P17 O16 J17 H16 Q14 K15 L15 K14];B[sa]C[黑棋 胜率: 100.0% (+0.0%)
-领先: 43.3 (-0.3) 不确定度: 18.5
-(Katago / 3.4k 计算量)
-贴目: 7.5 激进度: -2.75]LZ[Katago 99.9 1.0k -29.4 17.3 2.75
-move E16 visits 330 winrate 11 prior 1307 scoreMean -29.45 pv E16 E15 D17 F16 E17 C16 F17 H15 info move R14 visits 172 winrate 11 prior 979 scoreMean -29.56 pv R14 Q14 Q13 P14 R16 R17 info move K17 visits 107 winrate 10 prior 1042 scoreMean -29.89 pv K17 L17 L16 M17 M16 J17 info move H15 visits 49 winrate 10 prior 650 scoreMean -29.96 pv H15 J17 Q18 R17 info move F17 visits 49 winrate 11 prior 364 scoreMean -29.65 pv F17 P17 O16 Q14 K17 info move O15 visits 43 winrate 9 prior 584 scoreMean -30.01 pv O15 P17 O18 Q14 K17];W[ed]C[白棋 胜率: 0.1% (+0.1%)
-领先: -29.4 (-13.9) 不确定度: 17.3
-(Katago / 1.0k 计算量)
-贴目: 7.5 激进度: 2.75]LZ[Katago 0.1 9.5k 30.2 17.4 -2.75
-move E15 visits 8059 winrate 9989 prior 2618 scoreMean 30.24 pv E15 D17 F16 E17 D15 F17 O16 N16 O15 P17 Q17 N15 Q14 N13 K14 info move E17 visits 396 winrate 9986 prior 2346 scoreMean 28.37 pv E17 F17 P17 O16 Q14 D17 E18 D18 info move D17 visits 198 winrate 9988 prior 1013 scoreMean 28.69 pv D17 R14 Q14 Q13 P14 R17 info move O16 visits 168 winrate 9987 prior 514 scoreMean 29.30 pv O16 N16 O15 P17 N15 M16 M15 info move D15 visits 109 winrate 9988 prior 427 scoreMean 29.05 pv D15 E17 F14 R14 info move P17 visits 101 winrate 9989 prior 216 scoreMean 29.48 pv P17 O16 Q14 D17 D15 C17];B[bh]C[黑棋 胜率: 99.9% (+0.0%)
-领先: 30.2 (-0.8) 不确定度: 17.4
-(Katago / 9.5k 计算量)
-贴目: 7.5 激进度: -2.75]LZ[Katago 99.8 1.1k -23.7 16.6 2.75
-move D17 visits 644 winrate 21 prior 3221 scoreMean -23.67 pv D17 D15 R14 Q14 Q13 P14 R17 R15 info move R14 visits 143 winrate 21 prior 1032 scoreMean -23.82 pv R14 Q14 Q13 P14 R15 R16 P13 info move O15 visits 58 winrate 19 prior 606 scoreMean -24.01 pv O15 Q14 D17 D15 E15 P17 info move Q14 visits 24 winrate 22 prior 271 scoreMean -24.07 pv Q14 O16 N16 O15 info move E15 visits 21 winrate 19 prior 307 scoreMean -24.33 pv E15 D17 R14 P15 info move M16 visits 17 winrate 19 prior 255 scoreMean -24.35 pv M16 E15 F16];W[dc]C[白棋 胜率: 0.2% (+0.1%)
-领先: -23.7 (-6.6) 不确定度: 16.6
-(Katago / 1.1k 计算量)
-贴目: 7.5 激进度: 2.75]LZ[Katago 0.2 1.9k 24.0 16.6 -2.75
-move D15 visits 1280 winrate 9980 prior 4425 scoreMean 24.01 pv D15 R14 Q14 Q13 P14 R15 R16 P13 J17 info move E17 visits 444 winrate 9978 prior 1639 scoreMean 23.82 pv E17 F16 D15 E18 C17 F17 O16 N16 info move E15 visits 68 winrate 9978 prior 639 scoreMean 23.16 pv E15 F16 D15 R14 P15 R17 info move O16 visits 27 winrate 9973 prior 429 scoreMean 22.31 pv O16 N16 O15 C16 D15 info move P17 visits 15 winrate 9975 prior 211 scoreMean 22.38 pv P17 C16 O16 C14];B[rh]C[黑棋 胜率: 99.8% (+0.0%)
-领先: 24.0 (-0.3) 不确定度: 16.6
-(Katago / 1.9k 计算量)
-贴目: 7.5 激进度: -2.75]LZ[Katago 99.7 1.2k -20.0 16.4 2.75
-move P15 visits 128 winrate 33 prior 451 scoreMean -20.00 pv P15 Q15 Q18 D15 E15 C17 info move C16 visits 709 winrate 38 prior 6633 scoreMean -21.01 pv C16 D15 C15 C17 C14 C18 E17 F15 E15 D14 B15 A17 C12 info move Q17 visits 51 winrate 30 prior 129 scoreMean -19.70 pv Q17 R17 R16 Q15 S17 R18 S18 info move Q18 visits 50 winrate 30 prior 186 scoreMean -19.95 pv Q18 D15 P15 Q15 P14 info move R14 visits 46 winrate 35 prior 64 scoreMean -19.83 pv R14 O16 N16 O15 R17 info move R17 visits 44 winrate 31 prior 149 scoreMean -19.86 pv R17 Q17 Q18 R16 S18 S17];W[oe]C[白棋 胜率: 0.3% (+0.1%)
-领先: -20.0 (-4.0) 不确定度: 16.4
-(Katago / 1.2k 计算量)
-贴目: 7.5 激进度: 2.75]LZ[Katago 0.3 5.2k 20.8 16.3 -2.75
-move Q15 visits 4144 winrate 9971 prior 3816 scoreMean 20.76 pv Q15 Q18 D15 E15 C17 P14 Q14 R17 N15 P13 info move P16 visits 455 winrate 9965 prior 2404 scoreMean 19.74 pv P16 O16 O15 N15 O14 N14 P18 O18 O13 N13 O12 C16 info move P17 visits 261 winrate 9966 prior 867 scoreMean 20.04 pv P17 Q15 O18 N17 N18 C16 D15 info move E17 visits 187 winrate 9967 prior 840 scoreMean 20.02 pv E17 F16 Q15 P14 Q14 Q18 info move E15 visits 32 winrate 9964 prior 287 scoreMean 19.03 pv E15 Q15 R16 R15 Q18])
+贴目: 7.5 激进度: -2.75]LZ[Katago 100.0 188 -87.5 21.0 2.75
+move Q5 visits 87 winrate 0 prior 1713 scoreMean -87.53 pv Q5 O4 R8 R5 R6 info move P4 visits 28 winrate 0 prior 1210 scoreMean -88.20 pv P4 Q5 P6 Q6 P7 info move Q7 visits 26 winrate 0 prior 1347 scoreMean -88.15 pv Q7 O4 N6 C4 info move L5 visits 11 winrate 0 prior 585 scoreMean -87.92 pv L5 O4 N6 info move E6 visits 6 winrate 0 prior 369 scoreMean -88.12 pv E6 Q6 P4])
