@@ -92,6 +92,7 @@
     ],
     "limit-my-time": false,
     "genmove-game-notime": false,
+    "show-suggestions-frame": false,
     "load-estimate-engine": false,
     "move-rank-mark-last-move": 1,
     "theme": "默认",
@@ -202,7 +203,7 @@
     "autoload-empty": false,
     "min-playout-ratio-for-stats": 0,
     "use-java-looks": false,
-    "show-coordinates": false,
+    "show-coordinates": true,
     "shadows-enabled": true,
     "show-title-wr": true,
     "autoload-default": false,
@@ -245,8 +246,8 @@
     "show-winrate-graph": true,
     "large-winrate-graph": false,
     "recent-file-paths": [
-      {"path": "E:\\ZhuoMian\\我_Vs_Katago_20230927012331.sgf"},
-      {"path": "E:\\ZhuoMian\\我_Vs_Katago_20230929104306.sgf"}
+      {"path": "E:\\ZhuoMian\\我_Vs_Katago_20230929104306.sgf"},
+      {"path": "E:\\ZhuoMian\\我_Vs_Katago_20230927012331.sgf"}
     ],
     "best-move-color": [
       0,
@@ -279,7 +280,7 @@
       0,
       200
     ],
-    "show-katago-score-lead-with-komi": true,
+    "show-katago-score-lead-with-komi": false,
     "show-pv-visits": false,
     "white-suggestion-order-white": false,
     "show-subboard": false,
