@@ -5024,23 +5024,43 @@ public class LizzieFrame extends JFrame {
         if (curData.isKataData || curData.isSaiData || (Lizzie.leelaz.isKatago && !EngineManager.isEmpty) || (EngineManager.isEngineGame && (Lizzie.engineManager.engineList.get(EngineManager.engineGameInfo.blackEngineIndex).isKatago || Lizzie.engineManager.engineList.get(EngineManager.engineGameInfo.whiteEngineIndex).isKatago))) {
             isKataStyle = true;
             try {
+                if (!Lizzie.frame.isPlayingAgainstLeelaz) {
+                    BoardHistoryNode preNode = Lizzie.board.getHistory().getCurrentHistoryNode().previous().get();
+                    BoardData boardDataPrevious = preNode.getData();
+                    double selfPreviousWinrate = 100 - boardDataPrevious.winrate;
+                    selfReduceWinrate = curData.winrate - selfPreviousWinrate;
+                    if (!curData.blackToPlay) {
+                        //胜率变化情况
+                        selfReduceWinrate = -selfReduceWinrate;
+                    }
+                    score = curData.getLeadBorderKomi() - boardDataPrevious.getLeadBorderKomi();
+
+                }
                 scoreLead = curData.getLeadBorderKomi();
-                List<MoveData> best = Lizzie.frame.getBestMoves();
-                if (curData.lastMoveColor.isEmpty()) {
-                    selfReduceWinrate = 0;
-                    score = 0;
-                } else {
-                    BoardHistoryNode currentNode = Lizzie.board.getHistory().getCurrentHistoryNode();
-                    BoardHistoryNode preSameColor = Lizzie.board.getHistory().getCurrentHistoryNode().previous().get().previous().get();
-                    if (currentNode.getData().blackToPlay && preSameColor.getData().blackToPlay || !currentNode.getData().blackToPlay && !preSameColor.getData().blackToPlay) {
-                        selfReduceWinrate = best.get(0).winrate - preSameColor.getData().winrate;
-                        score = best.get(0).scoreMean - (preSameColor.getData().scoreMean);
-                        if (!currentNode.getData().blackToPlay) {
-                            selfReduceWinrate = -selfReduceWinrate;
-                            score = -score;
+
+                if (Lizzie.frame.isPlayingAgainstLeelaz) {
+                    List<MoveData> best = Lizzie.frame.getBestMoves();
+                    if(curData.lastMoveColor.isEmpty()){
+                        selfReduceWinrate=0;
+                        score = 0;
+                    }else{
+                        BoardHistoryNode currentNode= Lizzie.board.getHistory().getCurrentHistoryNode();
+                        BoardHistoryNode preSameColor = Lizzie.board.getHistory().getCurrentHistoryNode().previous().get().previous().get();
+                        if(currentNode.getData().blackToPlay&&preSameColor.getData().blackToPlay
+                                ||!currentNode.getData().blackToPlay&&!preSameColor.getData().blackToPlay){
+                            selfReduceWinrate = best.get(0).winrate -preSameColor.getData().winrate;
+                            score = best.get(0).scoreMean - (preSameColor.getData().scoreMean);
+                            if(!currentNode.getData().blackToPlay){
+                                selfReduceWinrate = - selfReduceWinrate;
+                                score=-score;
+                            }
+                        }else{
+                            selfReduceWinrate = best.get(0).winrate - (100 - preSameColor.getData().winrate);
+                            score = best.get(0).scoreMean - (-preSameColor.getData().scoreMean);
                         }
                     }
                 }
+
             } catch (Exception e) {
                 System.err.println(e);
             }
