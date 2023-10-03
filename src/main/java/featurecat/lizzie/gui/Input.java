@@ -580,10 +580,14 @@ public class Input implements MouseListener, KeyListener, MouseWheelListener, Mo
                 break;
 
             case VK_ENTER:
-                if (e.isAltDown()) {
-                    Lizzie.frame.continueAiPlaying(false, true, true, true);
-                } else {
-                    Lizzie.frame.continueAiPlaying(true, true, true, true);
+                if(Lizzie.frame.isAiPlaying()){
+                    if (e.isAltDown()) {
+                        Lizzie.frame.continueAiPlaying(false, true, true, true);
+                    } else {
+                        Lizzie.frame.continueAiPlaying(true, true, true, true);
+                    }
+                }else{
+                    Lizzie.frame.stopAiPlayingAndPolicy();
                 }
                 break;
 

@@ -2804,14 +2804,17 @@ public class Menu extends JMenuBar {
 
         final JFontMenuItem continueAnalyzeGameAsWhite =
                 new JFontMenuItem(
-                        resourceBundle.getString("Menu.continueAnalyzeGameAsWhite")); // ("续弈[AI执黑](分析模式 回车)");
+                       "续弈[AI执黑](分析模式 回车)");
 
         continueAnalyzeGameAsWhite.addActionListener(
                 new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        if (Lizzie.leelaz.noAnalyze) Lizzie.frame.continueAiPlaying(true, false, false, false);
-                        else Lizzie.frame.continueAiPlaying(false, false, false, false);
+                        if (Lizzie.leelaz.noAnalyze) {
+                            Lizzie.frame.continueAiPlaying(true, false, false, false);
+                        }else{
+                            Lizzie.frame.continueAiPlaying(false, false, false, false);
+                        }
                     }
                 });
 
@@ -2859,7 +2862,7 @@ public class Menu extends JMenuBar {
 
         gameMenu.addSeparator();
         final JFontMenuItem breakGame =
-                new JFontMenuItem(resourceBundle.getString("Menu.breakGame")); // ("终止人机对局(空格)");
+                new JFontMenuItem("终止人机对局"); // ("终止人机对局(空格)");
         breakGame.addActionListener(
                 new ActionListener() {
                     @Override
