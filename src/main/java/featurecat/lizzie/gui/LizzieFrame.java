@@ -4279,6 +4279,9 @@ public class LizzieFrame extends JFrame {
                                 }
                                 String text2 = ponderingText + "已," + statusText; // + " " + switchingText;
                                 //左下角分析开启文字dongxiaoming
+                                if(Lizzie.frame.isAiPlaying()){
+                                    weightText+=" 对弈中…";
+                                }
                                 drawPonderingState(g, weightText, text2, ponderingX, ponderingY, ponderingY2, ponderingSize);
                             } else {
                                 String loadingText = getLoadingText();
@@ -5039,6 +5042,7 @@ public class LizzieFrame extends JFrame {
                     closeScore = true;
                 }
             } catch (Exception e) {
+                closeScore = true;
             }
             if (Lizzie.config.showKataGoScoreLeadWithKomi) {
                 text = text + "黑棋盘面" + String.format(Locale.ENGLISH, "%.1f", scoreLead);
@@ -7210,9 +7214,9 @@ public class LizzieFrame extends JFrame {
     }
 
     public void togglePolicy() {
-        if (isShowingHeatmap) {
-            Lizzie.leelaz.toggleHeatmap(true);
-        }
+//        if (isShowingHeatmap) {
+//            Lizzie.leelaz.toggleHeatmap(true);
+//        }
         if (Lizzie.leelaz.isZen) {
             isShowingPolicy = false;
             Lizzie.leelaz.toggleHeatmap(false);
@@ -8400,14 +8404,14 @@ public class LizzieFrame extends JFrame {
         toolbar.isPkStop = false;
         Lizzie.leelaz.isGamePaused = false;
         boolean isGaming = Lizzie.frame.isPlayingAgainstLeelaz || Lizzie.frame.isAnaPlayingAgainstLeelaz;
-        if (Lizzie.frame.isShowingHeatmap) {
-            Lizzie.leelaz.toggleHeatmap(true);
-            Lizzie.leelaz.notPondering();
+        //if (Lizzie.frame.isShowingHeatmap) {
+        //    Lizzie.leelaz.toggleHeatmap(true);
+//            Lizzie.leelaz.notPondering();
             if (Lizzie.leelaz.isKatago) clearKataEstimate();
-        }
+        //}
         if (Lizzie.frame.isShowingPolicy && Lizzie.leelaz.isPondering()) {
             Lizzie.frame.togglePolicy();
-            Lizzie.leelaz.notPondering();
+//            Lizzie.leelaz.notPondering();
         }
         if (Lizzie.frame.isPlayingAgainstLeelaz) {
             stopTimer();
@@ -8419,7 +8423,7 @@ public class LizzieFrame extends JFrame {
             if (Lizzie.config.autoSavePlayedGame) autoSavePlayedGame();
             Lizzie.frame.isPlayingAgainstLeelaz = false;
             Lizzie.leelaz.isThinking = false;
-            Lizzie.leelaz.notPondering();
+//            Lizzie.leelaz.notPondering();
             boardRenderer.removeblock();
             if (Lizzie.config.isDoubleEngineMode()) {
                 boardRenderer2.removeblock();
@@ -8433,10 +8437,10 @@ public class LizzieFrame extends JFrame {
             stopTimer();
             setAsMain();
             restoreWRN(false);
-            if (Lizzie.leelaz.isheatmap) {
-                Lizzie.leelaz.isheatmap = false;
-                this.isShowingHeatmap = false;
-            }
+//            if (Lizzie.leelaz.isheatmap) {
+//                Lizzie.leelaz.isheatmap = false;
+//                this.isShowingHeatmap = false;
+//            }
             Lizzie.leelaz.setGameStatus(false);
             if (Lizzie.config.autoSavePlayedGame) autoSavePlayedGame();
             Lizzie.frame.isAnaPlayingAgainstLeelaz = false;
@@ -8449,7 +8453,7 @@ public class LizzieFrame extends JFrame {
             menu.setChkShowBlack(true);
             menu.setChkShowWhite(true);
             Lizzie.leelaz.anaGameResignCount = 0;
-            Lizzie.leelaz.notPondering();
+//            Lizzie.leelaz.notPondering();
             boardRenderer.removeblock();
             if (Lizzie.config.isDoubleEngineMode()) {
                 boardRenderer2.removeblock();
@@ -8458,7 +8462,7 @@ public class LizzieFrame extends JFrame {
         if (Lizzie.config.isAutoAna) {
             Lizzie.config.isAutoAna = false;
             LizzieFrame.toolbar.chkAutoAnalyse.setSelected(false);
-            Lizzie.leelaz.notPondering();
+//            Lizzie.leelaz.notPondering();
         }
         LizzieFrame.menu.toggleDoubleMenuGameStatus();
         return isGaming;
