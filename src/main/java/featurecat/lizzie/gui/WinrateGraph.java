@@ -28,9 +28,6 @@ public class WinrateGraph {
     private boolean noC = false;
 
     public void draw(Graphics2D g, Graphics2D gBlunder, Graphics2D gBackground, int posx, int posy, int width, int height) {
-        if(!Lizzie.leelaz.isPondering()){
-            return;
-        }
 
         largeEnough = width > 600 && height > 300;
         BoardHistoryNode curMove = Lizzie.board.getHistory().getCurrentHistoryNode();
