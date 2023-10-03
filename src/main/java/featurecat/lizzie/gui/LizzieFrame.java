@@ -4280,7 +4280,7 @@ public class LizzieFrame extends JFrame {
                                 String text2 = ponderingText + "已," + statusText; // + " " + switchingText;
                                 //左下角分析开启文字dongxiaoming
                                 if(Lizzie.frame.isAiPlaying()){
-                                    weightText+=" 对弈中…";
+                                    weightText+="对弈中";
                                 }
                                 drawPonderingState(g, weightText, text2, ponderingX, ponderingY, ponderingY2, ponderingSize);
                             } else {
@@ -4728,9 +4728,23 @@ public class LizzieFrame extends JFrame {
         g.fillRect(x, y, width, height);
         g.drawRect(x, y, width, height);
 
+        String textTemp =text.split(",")[0];
         g.setColor(Color.white);
         g.setFont(font);
-        g.drawString(text, x + (width - stringWidth) / 2, y + stringHeight + (height - stringHeight) / 2);
+        g.drawString(textTemp, x + (width - stringWidth) / 2, y + stringHeight + (height - stringHeight) / 2);
+
+//        try {
+//
+//            fontSize = (int) (max(mainPanel.getWidth() , mainPanel.getHeight()) * size);
+//            font = new Font(Lizzie.config.fontName, Font.PLAIN, fontSize);
+//            textTemp = text.split(",")[1];
+//            int stringWidth2 = (int)(fm.stringWidth(textTemp));
+//            g.setColor(Color.WHITE);
+//            g.setFont(font);
+//            g.drawString(textTemp, x + (width - stringWidth) / 2+stringWidth2, y + stringHeight + (height - stringHeight) / 2);
+//        }catch (Exception e){
+//
+//        }
     }
 
     //左下角引擎开启文字dongxiaoming
