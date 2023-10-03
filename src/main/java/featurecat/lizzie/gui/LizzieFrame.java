@@ -5035,6 +5035,7 @@ public class LizzieFrame extends JFrame {
                 }
                 score = currentNode.getData().getLeadBorderKomi() - previousNode.getData().getLeadBorderKomi();
                 if (currentNode.getData().getLeadBorderKomi() == 0 || previousNode.getData().getLeadBorderKomi() == 0) {
+                    //目差缺失
                     closeScore = true;
                 }
             } catch (Exception e) {
@@ -5055,20 +5056,20 @@ public class LizzieFrame extends JFrame {
         if (EngineManager.isEngineGame) {
             drawString(g, posX, posY + height * 17 / 20, uiFont, Font.PLAIN, text, height / 4, width * 20 / 21, 0, false);
         } else {
-            text = text + "   " + "最后一手";
+            text = text + "   " + "最后一手评分";
             int lastNo = Lizzie.board.getData().lastMoveMatchCandidteNo;
             if (lastNo > 0) {
                 text += "(#" + lastNo + ")";
             } else {
                 text += "(#)";
             }
-            text += ": " + ((selfReduceWinrate > 0 ? "+" : "-") + String.format(Locale.ENGLISH, "%.1f%%", Math.abs(selfReduceWinrate)));
+            text += ": 胜率" + ((selfReduceWinrate > 0 ? "+" : "-") + String.format(Locale.ENGLISH, "%.1f%%", Math.abs(selfReduceWinrate)));
 
             if (closeScore) {
-                text += " (目差缺失数据,打开引擎分析当前步与上一步)";
+                text += " (目差数据缺失,打开引擎分析当前步与上一步)";
             }
             if (isKataStyle && !EngineManager.isEngineGame && !closeScore) {
-                text = text + " " + ((score > 0 ? "+" : "-") + String.format(Locale.ENGLISH, "%.1f", Math.abs(score))) + Lizzie.resourceBundle.getString("LizzieFrame.pts");
+                text = text + " 目差" + ((score > 0 ? "+" : "-") + String.format(Locale.ENGLISH, "%.1f", Math.abs(score))) + Lizzie.resourceBundle.getString("LizzieFrame.pts");
             }
             drawString(g, posX, posY + height * 17 / 20, uiFont, Font.PLAIN, text, height / 4, width * 20 / 21, 0, false);
         }
