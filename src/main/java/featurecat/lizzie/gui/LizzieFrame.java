@@ -4944,7 +4944,7 @@ public class LizzieFrame extends JFrame {
             }
             return;
         }
-        double lastWR = -1; // winrate the previous move
+        double lastWR = 50; // winrate the previous move
         double lastScore = 0;
         boolean validLastWinrate = false; // whether it was actually calculated
         Optional<BoardHistoryNode> previous = Lizzie.board.getHistory().getCurrentHistoryNode().previous();
@@ -5020,10 +5020,12 @@ public class LizzieFrame extends JFrame {
         boolean isKataStyle = false;
 
         scoreLead = curData.getLeadBorderKomi();
+        boolean closeScore =false;
+        BoardHistoryNode currentNode=null;
         if (curData.isKataData || curData.isSaiData || (Lizzie.leelaz.isKatago && !EngineManager.isEmpty) || (EngineManager.isEngineGame && (Lizzie.engineManager.engineList.get(EngineManager.engineGameInfo.blackEngineIndex).isKatago || Lizzie.engineManager.engineList.get(EngineManager.engineGameInfo.whiteEngineIndex).isKatago))) {
             isKataStyle = true;
             try {
-                BoardHistoryNode currentNode = Lizzie.board.getHistory().getCurrentHistoryNode();
+                currentNode = Lizzie.board.getHistory().getCurrentHistoryNode();
                 BoardHistoryNode previousNode =currentNode.previous().get();
                 double selfPreviousWinrate = 100 - previousNode.getData().winrate;
                 selfReduceWinrate = currentNode.getData().winrate - selfPreviousWinrate;
@@ -5032,10 +5034,10 @@ public class LizzieFrame extends JFrame {
                     selfReduceWinrate = -selfReduceWinrate;
                 }
                 score = currentNode.getData().getLeadBorderKomi() -  previousNode.getData().getLeadBorderKomi();
+                if(currentNode.getData().getLeadBorderKomi()==0||previousNode.getData().getLeadBorderKomi()==0){
+                    closeScore=true;
+                }
             } catch (Exception e) {
-                score=0;
-                scoreLead=0;
-                System.err.println(e);
             }
             if (Lizzie.config.showKataGoScoreLeadWithKomi) {
                 text = text + "黑棋盘面" + String.format(Locale.ENGLISH, "%.1f", scoreLead);
@@ -5058,11 +5060,13 @@ public class LizzieFrame extends JFrame {
             if (lastNo > 0) {
                 text += "(#" + lastNo + ")";
             } else {
-                text += "(#) ";
+                text += "(#)";
             }
             text += ": " + ((selfReduceWinrate > 0 ? "+" : "-") + String.format(Locale.ENGLISH, "%.1f%%", Math.abs(selfReduceWinrate)));
-            boolean closeScore = (isPlayingAgainstLeelaz || isAnaPlayingAgainstLeelaz)&&(!Lizzie.leelaz.isPondering());
-            //和引擎对局时，如果不开分析，我方信息缺失盘面信息，所以关掉目差@dongxiaoming
+
+            if(closeScore){
+                text+=" (目差缺失数据,打开引擎分析当前步与上一步)";
+            }
             if (isKataStyle && !EngineManager.isEngineGame&&!closeScore) {
                 text = text + " " + ((score > 0 ? "+" : "-") + String.format(Locale.ENGLISH, "%.1f", Math.abs(score))) + Lizzie.resourceBundle.getString("LizzieFrame.pts");
             }
