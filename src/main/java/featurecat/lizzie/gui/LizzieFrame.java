@@ -8310,10 +8310,6 @@ public class LizzieFrame extends JFrame {
         }
     }
 
-    public void breakName() {
-        stopAiPlayingAndPolicy();
-    }
-
     public void togglePonderMannul() {
         //空格打开分析@dongxiaoming
         Lizzie.leelaz.togglePonder();
