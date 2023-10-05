@@ -82,13 +82,29 @@ public class BoardData {
         this.bestMoves = new ArrayList<>();
         this.bestMoves2 = new ArrayList<>();
     }
+    public MoveData mustBestBoveData;
 
     public double getKomi() {
         if (komi != -999) return komi;
         else return Lizzie.board.getHistory().getGameInfo().getKomi();
     }
+    public double getMustBestLeadBoardKomi(){
+        if (komi == -999) {
+            return 0;
+        }
+        double temp = komi;
+        if (!Lizzie.config.showKataGoScoreLeadWithKomi) {
+            temp = 0;
+        }
+        if (blackToPlay) {
+            return temp + mustBestBoveData.scoreMean;
+        } else {
+            return temp - mustBestBoveData.scoreMean;
+        }
 
-    public double getLeadBorderKomi() {
+    }
+
+    public double getLeadBoardKomi() {
         if (komi == -999) {
             return 0;
         }

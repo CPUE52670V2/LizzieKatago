@@ -5036,22 +5036,22 @@ public class LizzieFrame extends JFrame {
         double selfReduceWinrate = 0;
         boolean isKataStyle = false;
 
-        scoreLead = curData.getLeadBorderKomi();
+        scoreLead = curData.getLeadBoardKomi();
         boolean closeScore = false;
-        BoardHistoryNode currentNode = null;
         if (curData.isKataData || curData.isSaiData || (Lizzie.leelaz.isKatago && !EngineManager.isEmpty) || (EngineManager.isEngineGame && (Lizzie.engineManager.engineList.get(EngineManager.engineGameInfo.blackEngineIndex).isKatago || Lizzie.engineManager.engineList.get(EngineManager.engineGameInfo.whiteEngineIndex).isKatago))) {
             isKataStyle = true;
             try {
-                currentNode = Lizzie.board.getHistory().getCurrentHistoryNode();
-                BoardHistoryNode previousNode = currentNode.previous().get();
-                double selfPreviousWinrate = 100 - previousNode.getData().winrate;
-                selfReduceWinrate = currentNode.getData().winrate - selfPreviousWinrate;
-                if (!currentNode.getData().blackToPlay) {
+                List<BoardData> boardDataList = Lizzie.board.getBoardDataList();
+                BoardData currentData = boardDataList.get(0);
+                BoardData previousData = boardDataList.get(1);
+                double selfPreviousWinrate = 100 -previousData.winrate;
+                selfReduceWinrate = currentData.winrate - selfPreviousWinrate;
+                if (!currentData.blackToPlay) {
                     //胜率变化情况
                     selfReduceWinrate = -selfReduceWinrate;
                 }
-                score = currentNode.getData().getLeadBorderKomi() - previousNode.getData().getLeadBorderKomi();
-                if (currentNode.getData().getLeadBorderKomi() == 0 || previousNode.getData().getLeadBorderKomi() == 0) {
+                score = currentData.getLeadBoardKomi() - previousData.getLeadBoardKomi();
+                if (currentData.getLeadBoardKomi() == 0 || currentData.getLeadBoardKomi() == 0) {
                     //目差缺失
                     closeScore = true;
                 }
@@ -5525,7 +5525,7 @@ public class LizzieFrame extends JFrame {
         }
     }
 
-    //点击大棋盘落子LizzieFrame@dongxiaoming
+    //点击大棋盘落子事件触发LizzieFrame@dongxiaoming
     public void onClicked(int x, int y) {
         if (Lizzie.frame.isTrying) {
             onClickedTrying(x, y);

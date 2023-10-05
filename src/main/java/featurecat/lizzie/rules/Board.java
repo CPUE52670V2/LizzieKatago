@@ -78,6 +78,19 @@ public class Board {
         initialize(false);
     }
 
+    public List<BoardData> getBoardDataList(){
+        List<BoardData>  list= new ArrayList<>();
+        BoardHistoryNode node = Lizzie.board.getHistory().getCurrentHistoryNode();
+        while (true) {
+            list.add(node.getData());
+            if(!node.previous().isPresent()){
+                return list;
+            }
+            node = node.previous().get();
+        }
+    }
+
+
     /**
      * Initialize the board completely
      */
