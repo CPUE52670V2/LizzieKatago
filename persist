@@ -3,8 +3,8 @@
   "checked-empty-blunder-thresholds": true,
   "ui-persist": {
     "gtp-console-position": [
-      1794,
-      534,
+      1725,
+      357,
       400,
       650
     ],
@@ -30,8 +30,8 @@
       63
     ],
     "main-window-position": [
-      1071,
-      153,
+      879,
+      137,
       1065,
       754
     ],
@@ -49,8 +49,8 @@
       -1,
       -1,
       -1,
-      1,
-      1,
+      -1,
+      -1,
       1,
       5,
       -1,

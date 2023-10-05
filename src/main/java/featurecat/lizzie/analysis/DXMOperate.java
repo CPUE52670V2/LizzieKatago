@@ -17,10 +17,17 @@ public class DXMOperate {
     public static String position = "";
 
     public static String operateOutCommand(String command) {
-//        if (command.indexOf("startGame") != -1) {
-//            return "";
-//        }
-//        if(true){
+        if (command.indexOf("startGame") != -1) {
+            //分析模式不用startGame 对其他没有影响dongxiaoming
+//            分析模式和genmove模式发现胜率图跳动的问题 是两种命令不同导致
+//            所以这个类实现了强转统一分析模式， 和手动分析同一种命令 这样胜率图就不会较大的变动
+//            然后发现即使是分析命令 胜率图就不会较大的变动 最后定位在startGame命令
+//            使用分析模式时要去掉startGame命令
+//            发现原来的分析模式也好使了,所以没有对命令和结果处理
+            return "name";
+        }
+
+//        if (true) {
 //            return command;
 //        }
         commandOrgan = command;
@@ -39,20 +46,19 @@ public class DXMOperate {
     }
 
     static String infoMove = null;
-    static Timer timer =null;
+    static Timer timer = null;
     public static String operateInResult(String result, BufferedOutputStream outputStream) {
         System.out.println("返回<---" + result);
-//        if(true){
+//        if (true) {
 //            return result;
 //        }
-//        map.put("key", result);
-        if (result.indexOf("=") != -1&&infoMove!=null) {
-            if(timer!=null){
+        if (result.indexOf("=") != -1 && infoMove != null) {
+            if (timer != null) {
                 timer.cancel();
-                timer=null;
+                timer = null;
             }
             String temp = infoMove.replaceAll("info move ", "");
-            infoMove=null;
+            infoMove = null;
             int i = temp.indexOf("visits");
             String po = temp.substring(0, i - 1);
             if (Lizzie.board.getHistory().isBlacksTurn()) {
@@ -71,7 +77,7 @@ public class DXMOperate {
         }
         if (Lizzie.frame.isAiPlaying() && result.startsWith("info move") && commandOrgan.startsWith("kata-genmove_analyze")) {
             infoMove = result;
-            if(timer==null){
+            if (timer == null) {
                 timer = new Timer();
                 timer.schedule(new TimerTask() {
                     @Override
@@ -84,13 +90,10 @@ public class DXMOperate {
                             e.printStackTrace();
                         }
                     }
-                },5000,10000);
-
+                }, 5000, 10000);
             }
-
         }
         return result;
-
     }
 
 }

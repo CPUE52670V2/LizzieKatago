@@ -2215,7 +2215,7 @@ public class BoardRenderer {
                             else if (percent >= 0.3) g.setColor(new Color(0, 120, 255));
                             else g.setColor(new Color(0, 235, 0));
                         }
-                        if (leelaz.isKatago && leelaz.iskataHeatmapShowOwner) {
+                         if (leelaz.isKatago && leelaz.iskataHeatmapShowOwner) {
                             if (percent < 0.3) {
                                 drawString(
                                         g,
