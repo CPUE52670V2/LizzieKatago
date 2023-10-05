@@ -17,6 +17,9 @@ public class DXMOperate {
     public static String position = "";
 
     public static String operateOutCommand(String command) {
+        if (command.indexOf("startGame") != -1) {
+            return "";
+        }
         System.out.println("输出-->" + command + "\n");
 //        if(true){
 //            return command;
@@ -35,14 +38,14 @@ public class DXMOperate {
         return command;
     }
 
-    static Map<String, String> s = new HashMap();
+    static Map<String, String> map = new HashMap();
 
     public static String operateInResult(String result, BufferedOutputStream outputStream) {
         System.out.println("返回<---" + result);
 //        if(true){
 //            return result;
 //        }
-        s.put("key", result);
+        map.put("key", result);
         if (Lizzie.frame.isAiPlaying() && result.startsWith("info move") && commandOrgan.startsWith("kata-genmove_analyze")) {
             commandOrgan = "";
             Timer timer = new Timer();
