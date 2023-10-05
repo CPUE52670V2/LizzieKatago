@@ -14,7 +14,7 @@ import java.util.*;
 public class DXMOperate {
     public static String commandOrgan = "";
     public static String commandSave = "";
-     public static String position="";
+    public static String position = "";
 
     public static String operateOutCommand(String command) {
         System.out.println("输出-->" + command + "\n");
@@ -34,15 +34,17 @@ public class DXMOperate {
         commandSave = command;
         return command;
     }
-    static Map<String,String> s = new HashMap();
+
+    static Map<String, String> s = new HashMap();
+
     public static String operateInResult(String result, BufferedOutputStream outputStream) {
         System.out.println("返回<---" + result);
 //        if(true){
 //            return result;
 //        }
-        s.put("key",result);
+        s.put("key", result);
         if (Lizzie.frame.isAiPlaying() && result.startsWith("info move") && commandOrgan.startsWith("kata-genmove_analyze")) {
-            commandOrgan="";
+            commandOrgan = "";
             Timer timer = new Timer();
             timer.schedule(new TimerTask() {
                 @Override
@@ -50,15 +52,15 @@ public class DXMOperate {
                     try {
                         String temp = s.get("key").replaceAll("info move ", "");
                         int i = temp.indexOf("visits");
-                        String po = temp.substring(0,i-1);
+                        String po = temp.substring(0, i - 1);
                         if (Lizzie.board.getHistory().isBlacksTurn()) {
                             temp = "play B " + po;
-                            position="play "+po;
+                            position = "play " + po;
                         } else {
                             temp = "play W " + po;
-                            position="play "+po;
+                            position = "play " + po;
                         }
-                        outputStream.write((temp+"\n").getBytes());
+                        outputStream.write((temp + "\n").getBytes());
                         outputStream.write("stop\n".getBytes());
                         outputStream.flush();
 
@@ -68,7 +70,7 @@ public class DXMOperate {
                         e.printStackTrace();
                     }
                 }
-            }, 5000, 100);
+            }, 5000, 100000);
         }
         return result;
 
