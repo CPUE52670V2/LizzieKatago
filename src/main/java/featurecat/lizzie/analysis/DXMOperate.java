@@ -53,7 +53,7 @@ public class DXMOperate {
                 @Override
                 public void run() {
                     try {
-                        String temp = s.get("key").replaceAll("info move ", "");
+                        String temp = map.get("key").replaceAll("info move ", "");
                         int i = temp.indexOf("visits");
                         String po = temp.substring(0, i - 1);
                         if (Lizzie.board.getHistory().isBlacksTurn()) {
