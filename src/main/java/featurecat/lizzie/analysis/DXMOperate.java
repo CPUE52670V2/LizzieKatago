@@ -40,10 +40,11 @@ public class DXMOperate {
                 } else {
                     command = "kata-analyze w 10";
                 }
+                timer = null;
             }
-            if(command.indexOf("stop")!=-1&&timer!=null){
-                return "name";
-            }
+//            if(command.indexOf("stop")!=-1&&timer!=null){
+//                return "name";
+//            }
         }
         System.out.println("输出-->" + command + "\n");
         commandSave = command;
@@ -56,29 +57,6 @@ public class DXMOperate {
 //        if (true) {
 //            return result;
 //        }
-        if (result.indexOf("=") != -1 && infoMove != null) {
-            if (timer != null) {
-                timer.cancel();
-                timer = null;
-            }
-            String temp = infoMove.replaceAll("info move ", "");
-            infoMove = null;
-            int i = temp.indexOf("visits");
-            String po = temp.substring(0, i - 1);
-            if (Lizzie.board.getHistory().isBlacksTurn()) {
-                temp = "play B " + po;
-                position = "play " + po;
-            } else {
-                temp = "play W " + po;
-                position = "play " + po;
-            }
-            try {
-                outputStream.write((temp + "\n").getBytes());
-                Lizzie.leelaz.ad(position);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
         if (Lizzie.frame.isAiPlaying() && result.startsWith("info move") && commandOrgan.startsWith("kata-genmove_analyze")) {
             infoMove = result;
             if (timer == null) {
@@ -87,9 +65,31 @@ public class DXMOperate {
                     @Override
                     public void run() {
                         try {
+                            String temp = infoMove.replaceAll("info move ", "");
+                            infoMove = null;
+                            int i = temp.indexOf("visits");
+                            String po = temp.substring(0, i - 1);
+                            if (Lizzie.board.getHistory().isBlacksTurn()) {
+                                temp = "play B " + po;
+                                position = "play " + po;
+                            } else {
+                                temp = "play W " + po;
+                                position = "play " + po;
+                            }
+                            outputStream.write((temp + "\n").getBytes());
+                            Lizzie.leelaz.ad(position);
                             outputStream.write("stop\n".getBytes());
                             outputStream.flush();
                             timer.cancel();
+                            if(Lizzie.leelaz.isPondering()){
+                                if (Lizzie.board.getHistory().isBlacksTurn()) {
+                                    String command = "kata-analyze b 10";
+                                    outputStream.write((command + "\n").getBytes());
+                                } else {
+                                    String command = "kata-analyze w 10";
+                                    outputStream.write((command + "\n").getBytes());
+                                }
+                            }
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
