@@ -86,6 +86,7 @@ public class DXMOperate {
                                     outputStream.write((command + "\n").getBytes());
                                 }
                             }
+                            outputStream.flush();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
