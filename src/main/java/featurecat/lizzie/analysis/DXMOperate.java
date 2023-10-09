@@ -15,6 +15,8 @@ public class DXMOperate {
     public static String commandOrgan = "";
     public static String commandSave = "";
     public static String position = "";
+    static String infoMove = null;
+    static Timer timer = null;
 
     public static String operateOutCommand(String command) {
         if (command.indexOf("startGame") != -1) {
@@ -39,14 +41,16 @@ public class DXMOperate {
                     command = "kata-analyze w 10";
                 }
             }
+            if(command.indexOf("stop")!=-1&&timer!=null){
+                return "name";
+            }
         }
         System.out.println("输出-->" + command + "\n");
         commandSave = command;
         return command;
     }
 
-    static String infoMove = null;
-    static Timer timer = null;
+
     public static String operateInResult(String result, BufferedOutputStream outputStream) {
         System.out.println("返回<---" + result);
 //        if (true) {
