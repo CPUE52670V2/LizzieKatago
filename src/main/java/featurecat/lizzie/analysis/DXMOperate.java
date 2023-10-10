@@ -24,7 +24,7 @@ public class DXMOperate {
             //分析模式不用startGame 对其他没有影响dongxiaoming
 //            分析模式和genmove模式发现胜率图跳动的问题 是两种命令不同导致
 //            所以这个类实现了强转统一分析模式， 和手动分析同一种命令 这样胜率图就不会较大的变动
-//            然后发现即使是分析命令 胜率图就不会较大的变动 最后定位在startGame命令
+//            然后发现即使是分析命令 胜率图也会较大的变动 最后定位在startGame命令
 //            使用分析模式时要去掉startGame命令
             return "name";
         }
