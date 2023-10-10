@@ -26,7 +26,6 @@ public class DXMOperate {
 //            所以这个类实现了强转统一分析模式， 和手动分析同一种命令 这样胜率图就不会较大的变动
 //            然后发现即使是分析命令 胜率图就不会较大的变动 最后定位在startGame命令
 //            使用分析模式时要去掉startGame命令
-//            发现原来的分析模式也好使了,所以没有对命令和结果处理
             return "name";
         }
 
@@ -41,6 +40,7 @@ public class DXMOperate {
                 } else {
                     command = "kata-analyze w 10";
                 }
+                timer=null;
             }
         }
         System.out.println("输出-->" + command + "\n");
@@ -48,84 +48,149 @@ public class DXMOperate {
         return command;
     }
 
+//    public static String operateInResult(String result, BufferedOutputStream outputStream) {
+//        System.out.println("返回<---" + result);
+////        if (true) {
+////            return result;
+////        }
+//        if (result.indexOf("=") != -1 && infoMove != null) {
+//            if (timer != null) {
+//                timer.cancel();
+//                timer = null;
+//            }
+//            commandOrgan = "";
+//            String temp = infoMove.replaceAll("info move ", "");
+//            infoMove = null;
+//            int i = temp.indexOf("visits");
+//            String po = temp.substring(0, i - 1);
+//            boolean isBlackPlay;
+//            if (Lizzie.board.getHistory().isBlacksTurn()) {
+//                temp = "play B " + po;
+//                position = "play " + po;
+//                isBlackPlay = false;
+//            } else {
+//                temp = "play W " + po;
+//                position = "play " + po;
+//                isBlackPlay = true;
+//            }
+//
+//            try {
+//                outputStream.write((temp + "\n").getBytes());
+//                outputStream.flush();
+//                if (Lizzie.board.getHistory().isBlacksTurn() && Lizzie.frame.playerIsBlack) {
+//                } else {
+//                    Lizzie.leelaz.ad(position);
+//                }
+//                if (isBlackPlay) {
+//                    outputStream.write(("kata-analyze b 10" + "\n").getBytes());
+//                } else {
+//                    outputStream.write(("kata-analyze w 10" + "\n").getBytes());
+//                }
+//                outputStream.flush();
+//                if (!Lizzie.leelaz.isPondering()) {
+//                    Timer timer = new Timer();
+//                    timer.schedule(new TimerTask() {
+//                        @Override
+//                        public void run() {
+//                            try {
+//                                timer.cancel();
+//                                outputStream.write(("stop" + "\n").getBytes());
+//                                outputStream.flush();
+//                            } catch (IOException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                    }, 3000, 10000);
+//                }
+//
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        if (Lizzie.frame.isAiPlaying() && result.startsWith("info move") && commandOrgan.startsWith("kata-genmove_analyze")) {
+//            infoMove = result;
+//            if (timer == null) {
+//                timer = new Timer();
+//                timer.schedule(new TimerTask() {
+//                    @Override
+//                    public void run() {
+//                        try {
+//                            outputStream.write("stop\n".getBytes());
+//                            outputStream.flush();
+//                            timer.cancel();
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                }, 5000, 10000);
+//            }
+//        }
+//        return result;
+//    }
+
     public static String operateInResult(String result, BufferedOutputStream outputStream) {
         System.out.println("返回<---" + result);
-//        if (true) {
+//        if(true){
 //            return result;
 //        }
-        if (result.indexOf("=") != -1 && infoMove != null) {
-            if (timer != null) {
-                timer.cancel();
-                timer = null;
-            }
-            commandOrgan = "";
-            String temp = infoMove.replaceAll("info move ", "");
-            infoMove = null;
-            int i = temp.indexOf("visits");
-            String po = temp.substring(0, i - 1);
-            boolean isBlackPlay;
-            if (Lizzie.board.getHistory().isBlacksTurn()) {
-                temp = "play B " + po;
-                position = "play " + po;
-                isBlackPlay = false;
-            } else {
-                temp = "play W " + po;
-                position = "play " + po;
-                isBlackPlay = true;
-            }
-
-            try {
-                outputStream.write((temp + "\n").getBytes());
-                outputStream.flush();
-                if (Lizzie.board.getHistory().isBlacksTurn() && Lizzie.frame.playerIsBlack) {
-                } else {
-                    Lizzie.leelaz.ad(position);
-                }
-                if (isBlackPlay) {
-                    outputStream.write(("kata-analyze b 10" + "\n").getBytes());
-                } else {
-                    outputStream.write(("kata-analyze w 10" + "\n").getBytes());
-                }
-                outputStream.flush();
-                if (!Lizzie.leelaz.isPondering()) {
-                    Timer timer = new Timer();
-                    timer.schedule(new TimerTask() {
-                        @Override
-                        public void run() {
-                            try {
-                                timer.cancel();
-                                outputStream.write(("stop" + "\n").getBytes());
-                                outputStream.flush();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }, 3000, 10000);
-                }
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
         if (Lizzie.frame.isAiPlaying() && result.startsWith("info move") && commandOrgan.startsWith("kata-genmove_analyze")) {
             infoMove = result;
-            if (timer == null) {
+            if(timer==null) {
                 timer = new Timer();
                 timer.schedule(new TimerTask() {
                     @Override
                     public void run() {
                         try {
-                            outputStream.write("stop\n".getBytes());
+                            String temp =infoMove.replaceAll("info move ", "");
+                            int i = temp.indexOf("visits");
+                            String po = temp.substring(0, i - 1);
+                            boolean isBlackPlay;
+                            if (Lizzie.board.getHistory().isBlacksTurn()) {
+                                temp = "play B " + po;
+                                position = "play " + po;
+                                isBlackPlay = false;
+                            } else {
+                                temp = "play W " + po;
+                                position = "play " + po;
+                                isBlackPlay = true;
+                            }
+
+                            Lizzie.leelaz.ad(position);
+                            outputStream.write((temp + "\n").getBytes());
                             outputStream.flush();
                             timer.cancel();
-                        } catch (IOException e) {
+
+                            if (isBlackPlay) {
+                                outputStream.write(("kata-analyze b 10" + "\n").getBytes());
+                                outputStream.flush();
+                            } else {
+                                outputStream.write(("kata-analyze w 10" + "\n").getBytes());
+                                outputStream.flush();
+                            }
+                            if (!Lizzie.leelaz.isPondering()) {
+                                Timer timer = new Timer();
+                                timer.schedule(new TimerTask() {
+                                    @Override
+                                    public void run() {
+                                        try {
+                                            timer.cancel();
+                                            outputStream.write(("stop" + "\n").getBytes());
+                                            outputStream.flush();
+                                        } catch (IOException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                }, 3000, 10000);
+                            }
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }
-                }, 5000, 10000);
+                }, 5000, 100);
             }
         }
         return result;
+
     }
 
 }
