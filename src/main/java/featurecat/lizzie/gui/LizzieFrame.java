@@ -4279,8 +4279,8 @@ public class LizzieFrame extends JFrame {
                                 }
                                 String text2 = ponderingText + "已," + statusText; // + " " + switchingText;
                                 //左下角分析开启文字dongxiaoming
-                                if(Lizzie.frame.isAiPlaying()){
-                                    weightText+="对弈中";
+                                if (Lizzie.frame.isAiPlaying()) {
+                                    weightText += "对弈中";
                                 }
                                 drawPonderingState(g, weightText, text2, ponderingX, ponderingY, ponderingY2, ponderingSize);
                             } else {
@@ -4728,7 +4728,7 @@ public class LizzieFrame extends JFrame {
         g.fillRect(x, y, width, height);
         g.drawRect(x, y, width, height);
 
-        String textTemp =text.split(",")[0];
+        String textTemp = text.split(",")[0];
         g.setColor(Color.white);
         g.setFont(font);
         g.drawString(textTemp, x + (width - stringWidth) / 2, y + stringHeight + (height - stringHeight) / 2);
@@ -5044,8 +5044,7 @@ public class LizzieFrame extends JFrame {
                 List<BoardData> boardDataList = Lizzie.board.getBoardDataList();
                 BoardData currentData = boardDataList.get(0);
                 BoardData previousData = boardDataList.get(1);
-                double selfPreviousWinrate = 100 -previousData.winrate;
-                selfReduceWinrate = currentData.winrate - selfPreviousWinrate;
+                selfReduceWinrate = currentData.winrate - (100 - previousData.winrate);
                 if (!currentData.blackToPlay) {
                     //胜率变化情况
                     selfReduceWinrate = -selfReduceWinrate;
@@ -5053,10 +5052,9 @@ public class LizzieFrame extends JFrame {
                 score = currentData.getLeadBoardKomi() - previousData.getLeadBoardKomi();
                 if (currentData.getLeadBoardKomi() == 0 || currentData.getLeadBoardKomi() == 0) {
                     //目差缺失
-                    closeScore = true;
+                    score = 0;
                 }
             } catch (Exception e) {
-                closeScore = true;
             }
             if (Lizzie.config.showKataGoScoreLeadWithKomi) {
                 text = text + "黑棋盘面" + String.format(Locale.ENGLISH, "%.1f", scoreLead);
@@ -5082,11 +5080,7 @@ public class LizzieFrame extends JFrame {
                 text += "(#)";
             }
             text += ": 胜率" + ((selfReduceWinrate > 0 ? "+" : "-") + String.format(Locale.ENGLISH, "%.1f%%", Math.abs(selfReduceWinrate)));
-
-            if (closeScore) {
-                text += " (目差数据缺失,打开引擎分析当前步与上一步)";
-            }
-            if (isKataStyle && !EngineManager.isEngineGame && !closeScore) {
+            if (isKataStyle && !EngineManager.isEngineGame) {
                 text = text + " 目差" + ((score > 0 ? "+" : "-") + String.format(Locale.ENGLISH, "%.1f", Math.abs(score))) + Lizzie.resourceBundle.getString("LizzieFrame.pts");
             }
             drawString(g, posX, posY + height * 17 / 20, uiFont, Font.PLAIN, text, height / 4, width * 20 / 21, 0, false);
@@ -8410,7 +8404,8 @@ public class LizzieFrame extends JFrame {
             }
         }.start();
     }
-    public boolean isAiPlaying(){
+
+    public boolean isAiPlaying() {
         return Lizzie.frame.isPlayingAgainstLeelaz || Lizzie.frame.isAnaPlayingAgainstLeelaz;
     }
 
@@ -8421,7 +8416,7 @@ public class LizzieFrame extends JFrame {
         //if (Lizzie.frame.isShowingHeatmap) {
         //    Lizzie.leelaz.toggleHeatmap(true);
 //            Lizzie.leelaz.notPondering();
-            if (Lizzie.leelaz.isKatago) clearKataEstimate();
+        if (Lizzie.leelaz.isKatago) clearKataEstimate();
         //}
         if (Lizzie.frame.isShowingPolicy && Lizzie.leelaz.isPondering()) {
             Lizzie.frame.togglePolicy();
