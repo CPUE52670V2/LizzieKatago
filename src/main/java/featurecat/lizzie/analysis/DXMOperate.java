@@ -32,6 +32,11 @@ public class DXMOperate {
 //        if (true) {
 //            return command;
 //        }
+        if(command.startsWith("kata-analyze")){
+            if(commandOrgan.startsWith("kata-genmove_analyze")){
+                return "name";
+            }
+        }
         if(command.equals("stop")&&commandOrgan.startsWith("kata-genmove_analyze")){
             return "name";
         }
@@ -50,86 +55,6 @@ public class DXMOperate {
         commandSave = command;
         return command;
     }
-
-//    public static String operateInResult(String result, BufferedOutputStream outputStream) {
-//        System.out.println("返回<---" + result);
-////        if (true) {
-////            return result;
-////        }
-//        if (result.indexOf("=") != -1 && infoMove != null) {
-//            if (timer != null) {
-//                timer.cancel();
-//                timer = null;
-//            }
-//            commandOrgan = "";
-//            String temp = infoMove.replaceAll("info move ", "");
-//            infoMove = null;
-//            int i = temp.indexOf("visits");
-//            String po = temp.substring(0, i - 1);
-//            boolean isBlackPlay;
-//            if (Lizzie.board.getHistory().isBlacksTurn()) {
-//                temp = "play B " + po;
-//                position = "play " + po;
-//                isBlackPlay = false;
-//            } else {
-//                temp = "play W " + po;
-//                position = "play " + po;
-//                isBlackPlay = true;
-//            }
-//
-//            try {
-//                outputStream.write((temp + "\n").getBytes());
-//                outputStream.flush();
-//                if (Lizzie.board.getHistory().isBlacksTurn() && Lizzie.frame.playerIsBlack) {
-//                } else {
-//                    Lizzie.leelaz.ad(position);
-//                }
-//                if (isBlackPlay) {
-//                    outputStream.write(("kata-analyze b 10" + "\n").getBytes());
-//                } else {
-//                    outputStream.write(("kata-analyze w 10" + "\n").getBytes());
-//                }
-//                outputStream.flush();
-//                if (!Lizzie.leelaz.isPondering()) {
-//                    Timer timer = new Timer();
-//                    timer.schedule(new TimerTask() {
-//                        @Override
-//                        public void run() {
-//                            try {
-//                                timer.cancel();
-//                                outputStream.write(("stop" + "\n").getBytes());
-//                                outputStream.flush();
-//                            } catch (IOException e) {
-//                                e.printStackTrace();
-//                            }
-//                        }
-//                    }, 3000, 10000);
-//                }
-//
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        if (Lizzie.frame.isAiPlaying() && result.startsWith("info move") && commandOrgan.startsWith("kata-genmove_analyze")) {
-//            infoMove = result;
-//            if (timer == null) {
-//                timer = new Timer();
-//                timer.schedule(new TimerTask() {
-//                    @Override
-//                    public void run() {
-//                        try {
-//                            outputStream.write("stop\n".getBytes());
-//                            outputStream.flush();
-//                            timer.cancel();
-//                        } catch (IOException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                }, 5000, 10000);
-//            }
-//        }
-//        return result;
-//    }
 
     public static String operateInResult(String result, BufferedOutputStream outputStream) {
         System.out.println("返回<---" + result);
@@ -174,7 +99,7 @@ public class DXMOperate {
                             }
                             //要不要关闭分析，看是否开启了分启选择 dongxiaoming
                             if (!Lizzie.leelaz.isPondering()) {
-                                //没有选择分析，评价分析在3秒后停止 如果打开发分析则不用改变
+                                //没有打开分析，评价分析在3秒后停止 如果打开发分析则不用改变
                                 Timer timer = new Timer();
                                 timer.schedule(new TimerTask() {
                                     @Override

@@ -78,6 +78,13 @@ public class Board {
         initialize(false);
     }
 
+    public BoardData getBoardDataByIndex(int index){
+        List<BoardData> boardDataList = getBoardDataList();
+        if(boardDataList.size()>=index+1){
+            return boardDataList.get(index);
+        }
+        return null;
+    }
     public List<BoardData> getBoardDataList(){
         List<BoardData>  list= new ArrayList<>();
         BoardHistoryNode node = Lizzie.board.getHistory().getCurrentHistoryNode();
