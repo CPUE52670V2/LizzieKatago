@@ -4279,8 +4279,8 @@ public class LizzieFrame extends JFrame {
                                 }
                                 String text2 = ponderingText + "已," + statusText; // + " " + switchingText;
                                 //左下角分析开启文字dongxiaoming
-                                if(Lizzie.frame.isAiPlaying()){
-                                    weightText+="对弈中";
+                                if (Lizzie.frame.isAiPlaying()) {
+                                    weightText += "对弈中";
                                 }
                                 drawPonderingState(g, weightText, text2, ponderingX, ponderingY, ponderingY2, ponderingSize);
                             } else {
@@ -4728,7 +4728,7 @@ public class LizzieFrame extends JFrame {
         g.fillRect(x, y, width, height);
         g.drawRect(x, y, width, height);
 
-        String textTemp =text.split(",")[0];
+        String textTemp = text.split(",")[0];
         g.setColor(Color.white);
         g.setFont(font);
         g.drawString(textTemp, x + (width - stringWidth) / 2, y + stringHeight + (height - stringHeight) / 2);
@@ -5044,8 +5044,7 @@ public class LizzieFrame extends JFrame {
                 List<BoardData> boardDataList = Lizzie.board.getBoardDataList();
                 BoardData currentData = boardDataList.get(0);
                 BoardData previousData = boardDataList.get(1);
-                double selfPreviousWinrate = 100 -previousData.winrate;
-                selfReduceWinrate = currentData.winrate - selfPreviousWinrate;
+                selfReduceWinrate = currentData.winrate - (100 - previousData.winrate);
                 if (!currentData.blackToPlay) {
                     //胜率变化情况
                     selfReduceWinrate = -selfReduceWinrate;
@@ -5053,7 +5052,7 @@ public class LizzieFrame extends JFrame {
                 score = currentData.getLeadBoardKomi() - previousData.getLeadBoardKomi();
                 if (currentData.getLeadBoardKomi() == 0 || currentData.getLeadBoardKomi() == 0) {
                     //目差缺失
-                    score=0;
+                    score = 0;
                 }
             } catch (Exception e) {
             }
@@ -8405,7 +8404,8 @@ public class LizzieFrame extends JFrame {
             }
         }.start();
     }
-    public boolean isAiPlaying(){
+
+    public boolean isAiPlaying() {
         return Lizzie.frame.isPlayingAgainstLeelaz || Lizzie.frame.isAnaPlayingAgainstLeelaz;
     }
 
@@ -8416,7 +8416,7 @@ public class LizzieFrame extends JFrame {
         //if (Lizzie.frame.isShowingHeatmap) {
         //    Lizzie.leelaz.toggleHeatmap(true);
 //            Lizzie.leelaz.notPondering();
-            if (Lizzie.leelaz.isKatago) clearKataEstimate();
+        if (Lizzie.leelaz.isKatago) clearKataEstimate();
         //}
         if (Lizzie.frame.isShowingPolicy && Lizzie.leelaz.isPondering()) {
             Lizzie.frame.togglePolicy();
