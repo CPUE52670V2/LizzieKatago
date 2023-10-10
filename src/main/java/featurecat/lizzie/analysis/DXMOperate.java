@@ -32,6 +32,9 @@ public class DXMOperate {
 //        if (true) {
 //            return command;
 //        }
+        if(command.equals("stop")&&commandOrgan.startsWith("kata-genmove_analyze")){
+            return "name";
+        }
         commandOrgan = command;
         if (Lizzie.frame.isAiPlaying()) {
             if (command.startsWith("kata-genmove_analyze")) {
