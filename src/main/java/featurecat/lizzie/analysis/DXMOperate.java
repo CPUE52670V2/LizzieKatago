@@ -141,6 +141,7 @@ public class DXMOperate {
                     @Override
                     public void run() {
                         try {
+                            //分析后执行落子dongxiaoming
                             String temp =infoMove.replaceAll("info move ", "");
                             int i = temp.indexOf("visits");
                             String po = temp.substring(0, i - 1);
@@ -154,12 +155,13 @@ public class DXMOperate {
                                 position = "play " + po;
                                 isBlackPlay = true;
                             }
-
+                            //执行界面落子和引擎落子
                             Lizzie.leelaz.ad(position);
                             outputStream.write((temp + "\n").getBytes());
                             outputStream.flush();
                             timer.cancel();
 
+                            //计算落子评价dongxiaoming
                             if (isBlackPlay) {
                                 outputStream.write(("kata-analyze b 10" + "\n").getBytes());
                                 outputStream.flush();
@@ -167,7 +169,9 @@ public class DXMOperate {
                                 outputStream.write(("kata-analyze w 10" + "\n").getBytes());
                                 outputStream.flush();
                             }
+                            //要不要关闭分析，看是否开启了分启选择 dongxiaoming
                             if (!Lizzie.leelaz.isPondering()) {
+                                //没有选择分析，评价分析在3秒后停止 如果打开发分析则不用改变
                                 Timer timer = new Timer();
                                 timer.schedule(new TimerTask() {
                                     @Override
