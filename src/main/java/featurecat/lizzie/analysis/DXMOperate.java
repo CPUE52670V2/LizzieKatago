@@ -68,26 +68,41 @@ public class DXMOperate {
                             infoMove = null;
                             int i = temp.indexOf("visits");
                             String po = temp.substring(0, i - 1);
+                            boolean isAnalyisBlack;
                             if (Lizzie.board.getHistory().isBlacksTurn()) {
                                 temp = "play B " + po;
                                 position = "play " + po;
+                                isAnalyisBlack=false;
                             } else {
+                                isAnalyisBlack=true;
                                 temp = "play W " + po;
                                 position = "play " + po;
                             }
                             outputStream.write((temp + "\n").getBytes());
                             Lizzie.leelaz.ad(position);
-                            outputStream.write("stop\n".getBytes());
+
                             outputStream.flush();
                             timer.cancel();
-                            if(Lizzie.leelaz.isPondering()){
-                                if (Lizzie.board.getHistory().isBlacksTurn()) {
-                                    String command = "kata-analyze b 10";
-                                    outputStream.write((command + "\n").getBytes());
-                                } else {
-                                    String command = "kata-analyze w 10";
-                                    outputStream.write((command + "\n").getBytes());
-                                }
+                            if(isAnalyisBlack){
+                                String command = "kata-analyze b 10";
+                                outputStream.write((command + "\n").getBytes());
+                            }else{
+                                String command = "kata-analyze w 10";
+                                outputStream.write((command + "\n").getBytes());
+                            }
+                            if(!Lizzie.leelaz.isPondering()) {
+                                Timer timerStop = new Timer();
+                                timerStop.schedule(new TimerTask() {
+                                    @Override
+                                    public void run() {
+                                        try {
+                                            outputStream.write("stop\n".getBytes());
+                                            timerStop.cancel();
+                                        } catch (IOException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                }, 3000, 10000);
                             }
                         } catch (IOException e) {
                             e.printStackTrace();

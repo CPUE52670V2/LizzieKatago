@@ -5053,10 +5053,9 @@ public class LizzieFrame extends JFrame {
                 score = currentData.getLeadBoardKomi() - previousData.getLeadBoardKomi();
                 if (currentData.getLeadBoardKomi() == 0 || currentData.getLeadBoardKomi() == 0) {
                     //目差缺失
-                    closeScore = true;
+                    score=0;
                 }
             } catch (Exception e) {
-                closeScore = true;
             }
             if (Lizzie.config.showKataGoScoreLeadWithKomi) {
                 text = text + "黑棋盘面" + String.format(Locale.ENGLISH, "%.1f", scoreLead);
@@ -5082,11 +5081,7 @@ public class LizzieFrame extends JFrame {
                 text += "(#)";
             }
             text += ": 胜率" + ((selfReduceWinrate > 0 ? "+" : "-") + String.format(Locale.ENGLISH, "%.1f%%", Math.abs(selfReduceWinrate)));
-
-            if (closeScore) {
-                text += " (目差数据缺失,打开引擎分析当前步与上一步)";
-            }
-            if (isKataStyle && !EngineManager.isEngineGame && !closeScore) {
+            if (isKataStyle && !EngineManager.isEngineGame) {
                 text = text + " 目差" + ((score > 0 ? "+" : "-") + String.format(Locale.ENGLISH, "%.1f", Math.abs(score))) + Lizzie.resourceBundle.getString("LizzieFrame.pts");
             }
             drawString(g, posX, posY + height * 17 / 20, uiFont, Font.PLAIN, text, height / 4, width * 20 / 21, 0, false);
