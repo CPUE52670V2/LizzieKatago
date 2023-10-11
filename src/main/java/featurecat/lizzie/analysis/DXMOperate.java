@@ -32,13 +32,10 @@ public class DXMOperate {
 //        if (true) {
 //            return command;
 //        }
-        if(command.startsWith("kata-analyze")){
-            if(commandOrgan.startsWith("kata-genmove_analyze")){
+        if (commandOrgan.startsWith("kata-genmove_analyze")) {
+            if (command.startsWith("stop") || command.startsWith("kata-analyze")) {
                 return "name";
             }
-        }
-        if(command.equals("stop")&&commandOrgan.startsWith("kata-genmove_analyze")){
-            return "name";
         }
         commandOrgan = command;
         if (Lizzie.frame.isAiPlaying()) {
@@ -48,7 +45,7 @@ public class DXMOperate {
                 } else {
                     command = "kata-analyze w 10";
                 }
-                timer=null;
+                timer = null;
             }
         }
         System.out.println("输出-->" + command + "\n");
@@ -63,14 +60,14 @@ public class DXMOperate {
 //        }
         if (Lizzie.frame.isAiPlaying() && result.startsWith("info move") && commandOrgan.startsWith("kata-genmove_analyze")) {
             infoMove = result;
-            if(timer==null) {
+            if (timer == null) {
                 timer = new Timer();
                 timer.schedule(new TimerTask() {
                     @Override
                     public void run() {
                         try {
                             //分析后执行落子dongxiaoming
-                            String temp =infoMove.replaceAll("info move ", "");
+                            String temp = infoMove.replaceAll("info move ", "");
                             int i = temp.indexOf("visits");
                             String po = temp.substring(0, i - 1);
                             boolean isBlackPlay;
