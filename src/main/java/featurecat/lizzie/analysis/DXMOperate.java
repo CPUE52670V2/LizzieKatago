@@ -100,6 +100,7 @@ public class DXMOperate {
                                 outputStream.flush();
                             }
                             //要不要关闭分析，看是否开启了分析 dongxiaoming
+
                             if (!Lizzie.leelaz.isPondering()) {
                                 //没有打开分析，评价分析在3秒后停止 如果打开分析则不用关闭
                                 Timer timer = new Timer();
