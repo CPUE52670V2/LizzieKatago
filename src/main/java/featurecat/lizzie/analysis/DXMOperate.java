@@ -66,7 +66,11 @@ public class DXMOperate {
                     @Override
                     public void run() {
                         try {
-                            //分析后执行落子dongxiaoming
+                            //关闭分析
+                            outputStream.write(("stop" + "\n").getBytes());
+                            outputStream.flush();
+
+                            //分析最后的info结果执行落子dongxiaoming
                             String temp = infoMove.replaceAll("info move ", "");
                             int i = temp.indexOf("visits");
                             String po = temp.substring(0, i - 1);
