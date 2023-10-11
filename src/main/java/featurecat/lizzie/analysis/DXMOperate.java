@@ -33,6 +33,7 @@ public class DXMOperate {
 //            return command;
 //        }
         if (commandOrgan.startsWith("kata-genmove_analyze")) {
+            //电脑落子分析时，不许执行别的命令
             if (command.startsWith("stop") || command.startsWith("kata-analyze")) {
                 return "name";
             }
@@ -98,9 +99,9 @@ public class DXMOperate {
                                 outputStream.write(("kata-analyze w 10" + "\n").getBytes());
                                 outputStream.flush();
                             }
-                            //要不要关闭分析，看是否开启了分启选择 dongxiaoming
+                            //要不要关闭分析，看是否开启了分析 dongxiaoming
                             if (!Lizzie.leelaz.isPondering()) {
-                                //没有打开分析，评价分析在3秒后停止 如果打开发分析则不用改变
+                                //没有打开分析，评价分析在3秒后停止 如果打开分析则不用关闭
                                 Timer timer = new Timer();
                                 timer.schedule(new TimerTask() {
                                     @Override
