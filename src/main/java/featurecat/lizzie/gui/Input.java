@@ -787,6 +787,7 @@ public class Input implements MouseListener, KeyListener, MouseWheelListener, Mo
 
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
+//        鼠标滚轮回退事件
         // if (isinsertmode) {
         // return;
         // }

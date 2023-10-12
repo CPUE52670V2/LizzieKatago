@@ -10090,7 +10090,9 @@ public class LizzieFrame extends JFrame {
     }
 
     public static void undo(int movesToAdvance) {
-        if (Lizzie.frame.isPlayingAgainstLeelaz || Lizzie.frame.isAnaPlayingAgainstLeelaz) return;
+//        if (Lizzie.frame.isPlayingAgainstLeelaz || Lizzie.frame.isAnaPlayingAgainstLeelaz) {
+//            return;
+//        }
         if (boardRenderer.isShowingBranch()) {
             Lizzie.frame.doBranch(-movesToAdvance);
             Lizzie.frame.refresh();
