@@ -157,6 +157,9 @@ public class Input implements MouseListener, KeyListener, MouseWheelListener, Mo
 
     public static void undo() {
         LizzieFrame.undo(1);
+        if(Lizzie.leelaz.isPondering()){
+            Lizzie.leelaz.ponder();
+        }
     }
 
     private void undoToChildOfPreviousWithVariation() {
@@ -185,6 +188,9 @@ public class Input implements MouseListener, KeyListener, MouseWheelListener, Mo
 
     public static void redo() {
         LizzieFrame.redo(1);
+        if(Lizzie.leelaz.isPondering()){
+            Lizzie.leelaz.ponder();
+        }
     }
 
     //  private void startRawBoard() {
