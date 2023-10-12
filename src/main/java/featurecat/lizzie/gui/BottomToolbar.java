@@ -847,9 +847,15 @@ public class BottomToolbar extends JPanel {
         });
         backward10.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (EngineManager.isEngineGame) return;
-                for (int i = 0; i < 10; i++) Lizzie.board.previousMove(false);
-                if (Lizzie.frame.commentEditPane.isVisible()) Lizzie.frame.setCommentEditable(false);
+                if (EngineManager.isEngineGame){
+                    return;
+                }
+                for (int i = 0; i < 10; i++) {
+                    Lizzie.board.previousMove(false);
+                }
+                if (Lizzie.frame.commentEditPane.isVisible()){
+                    Lizzie.frame.setCommentEditable(false);
+                }
                 Lizzie.board.clearAfterMove();
                 Lizzie.frame.refresh();
                 setTxtUnfocuse();
@@ -877,7 +883,7 @@ public class BottomToolbar extends JPanel {
                     Lizzie.frame.setCommentEditable(false);
                 }
                 if (Lizzie.frame.isPlayingAgainstLeelaz || Lizzie.frame.isAnaPlayingAgainstLeelaz) {
-                    Lizzie.board.previousMove(false);
+//                    Lizzie.board.previousMove(false);
                     Lizzie.board.previousMove(true);
                 } else {
                     Lizzie.board.previousMove(true);

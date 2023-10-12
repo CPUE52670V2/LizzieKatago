@@ -10042,11 +10042,11 @@ public class LizzieFrame extends JFrame {
         AnalysisSettings analysisSettings = new AnalysisSettings(false, false);
         analysisSettings.setVisible(true);
     }
-
+//    上一步
     public static void redo(int movesToAdvance) {
-        if (Lizzie.frame.isPlayingAgainstLeelaz || Lizzie.frame.isAnaPlayingAgainstLeelaz) {
-            return;
-        }
+//        if (Lizzie.frame.isPlayingAgainstLeelaz || Lizzie.frame.isAnaPlayingAgainstLeelaz) {
+//            return;
+//        }
         if (LizzieFrame.boardRenderer.incrementDisplayedBranchLength(movesToAdvance)) {
             Lizzie.frame.refresh();
             return;
@@ -10067,11 +10067,11 @@ public class LizzieFrame extends JFrame {
             Lizzie.frame.refresh();
         }
     }
-
+//    键盘上一步dongxiaoming
     public static void redoNoRefresh(int movesToAdvance) {
-        if (Lizzie.frame.isPlayingAgainstLeelaz || Lizzie.frame.isAnaPlayingAgainstLeelaz) {
-            return;
-        }
+//        if (Lizzie.frame.isPlayingAgainstLeelaz || Lizzie.frame.isAnaPlayingAgainstLeelaz) {
+//            return;
+//        }
         if (LizzieFrame.boardRenderer.incrementDisplayedBranchLength(movesToAdvance)) {
             return;
         }
@@ -10089,8 +10089,11 @@ public class LizzieFrame extends JFrame {
         }
     }
 
+    //上一步dongxiaoming
     public static void undo(int movesToAdvance) {
-        if (Lizzie.frame.isPlayingAgainstLeelaz || Lizzie.frame.isAnaPlayingAgainstLeelaz) return;
+//        if (Lizzie.frame.isPlayingAgainstLeelaz || Lizzie.frame.isAnaPlayingAgainstLeelaz) {
+//            return;
+//        }
         if (boardRenderer.isShowingBranch()) {
             Lizzie.frame.doBranch(-movesToAdvance);
             Lizzie.frame.refresh();
@@ -10114,9 +10117,11 @@ public class LizzieFrame extends JFrame {
             Lizzie.frame.refresh();
         }
     }
-
+    //键盘上一步dongxiaoming
     public static void undoNoRefresh(int movesToAdvance) {
-        if (Lizzie.frame.isPlayingAgainstLeelaz || Lizzie.frame.isAnaPlayingAgainstLeelaz) return;
+//        if (Lizzie.frame.isPlayingAgainstLeelaz || Lizzie.frame.isAnaPlayingAgainstLeelaz) {
+//            return;
+//        }
         if (boardRenderer.isShowingBranch()) {
             Lizzie.frame.doBranch(-movesToAdvance);
             return;
