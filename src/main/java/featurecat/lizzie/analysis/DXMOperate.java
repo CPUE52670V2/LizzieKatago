@@ -109,6 +109,7 @@ public class DXMOperate {
                                     public void run() {
                                         try {
                                             timer.cancel();
+                                            commandOrgan="";
                                             outputStream.write(("stop" + "\n").getBytes());
                                             outputStream.flush();
                                         } catch (IOException e) {
